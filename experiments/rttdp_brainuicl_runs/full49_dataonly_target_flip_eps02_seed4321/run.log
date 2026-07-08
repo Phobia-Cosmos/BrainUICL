@@ -1,0 +1,1238 @@
+{
+  "device": "cuda:0",
+  "train": [
+    7,
+    16,
+    18,
+    23,
+    24,
+    28,
+    30,
+    34,
+    35,
+    37,
+    38,
+    41,
+    45,
+    48,
+    50,
+    53,
+    69,
+    71,
+    74,
+    78,
+    79,
+    82,
+    93,
+    94
+  ],
+  "val": [
+    12,
+    21,
+    29,
+    58,
+    76,
+    77
+  ],
+  "old_generalization": [
+    6,
+    14,
+    32,
+    39,
+    43,
+    44,
+    51,
+    56,
+    59,
+    62,
+    67,
+    68,
+    72,
+    73,
+    75,
+    88,
+    90,
+    92,
+    100
+  ],
+  "new_order": [
+    64,
+    89,
+    1,
+    27,
+    60,
+    5,
+    52,
+    42,
+    80,
+    26,
+    91,
+    22,
+    61,
+    85,
+    17,
+    36,
+    98,
+    33,
+    55,
+    86,
+    54,
+    84,
+    49,
+    3,
+    2,
+    10,
+    87,
+    15,
+    95,
+    57,
+    70,
+    11,
+    47,
+    65,
+    66,
+    96,
+    83,
+    9,
+    46,
+    31,
+    4,
+    19,
+    99,
+    63,
+    81,
+    25,
+    97,
+    20,
+    13
+  ],
+  "full_new_order": [
+    64,
+    89,
+    1,
+    27,
+    60,
+    5,
+    52,
+    42,
+    80,
+    26,
+    91,
+    22,
+    61,
+    85,
+    17,
+    36,
+    98,
+    33,
+    55,
+    86,
+    54,
+    84,
+    49,
+    3,
+    2,
+    10,
+    87,
+    15,
+    95,
+    57,
+    70,
+    11,
+    47,
+    65,
+    66,
+    96,
+    83,
+    9,
+    46,
+    31,
+    4,
+    19,
+    99,
+    63,
+    81,
+    25,
+    97,
+    20,
+    13
+  ]
+}
+[attack_stealth_target_flip] New Task 1/49 Subject 64 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 1 Loss 119.105008
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 2 Loss 84.489957
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 3 Loss 87.891439
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 4 Loss 75.842968
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 5 Loss 67.047290
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 6 Loss 72.175624
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 7 Loss 82.496114
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 8 Loss 72.816381
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 9 Loss 75.425293
+[attack_stealth_target_flip] Individual 1 Subject 64 CPC Epoch 10 Loss 57.472679
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 1 Loss 1.088281
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 2 Loss 1.024610
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 3 Loss 1.099085
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 4 Loss 1.031611
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 5 Loss 1.067486
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 6 Loss 1.110762
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 7 Loss 1.034272
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 8 Loss 1.020011
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 9 Loss 1.244037
+[attack_stealth_target_flip] Individual 1 Subject 64 Joint Epoch 10 Loss 0.990004
+[attack_stealth_target_flip] Subject 64 old ACC=0.6950 MF1=0.6821 buffer=1071 added=41
+[attack_stealth_target_flip] New Task 2/49 Subject 89 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 1 Loss 94.968407
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 2 Loss 69.008951
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 3 Loss 57.335413
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 4 Loss 53.855782
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 5 Loss 45.860709
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 6 Loss 46.226678
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 7 Loss 59.547807
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 8 Loss 86.041422
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 9 Loss 51.188166
+[attack_stealth_target_flip] Individual 2 Subject 89 CPC Epoch 10 Loss 40.620122
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 1 Loss 1.063368
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 2 Loss 0.827782
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 3 Loss 0.990245
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 4 Loss 1.274233
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 5 Loss 0.946309
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 6 Loss 1.192398
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 7 Loss 1.119853
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 8 Loss 1.110127
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 9 Loss 0.866051
+[attack_stealth_target_flip] Individual 2 Subject 89 Joint Epoch 10 Loss 0.744090
+[attack_stealth_target_flip] Subject 89 old ACC=0.7004 MF1=0.6844 buffer=1115 added=44
+[attack_stealth_target_flip] New Task 3/49 Subject 1 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 1 Loss 92.871562
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 2 Loss 76.416323
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 3 Loss 71.606400
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 4 Loss 76.483772
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 5 Loss 75.724398
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 6 Loss 84.046104
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 7 Loss 85.556470
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 8 Loss 97.615128
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 9 Loss 82.136426
+[attack_stealth_target_flip] Individual 3 Subject 1 CPC Epoch 10 Loss 72.687213
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 1 Loss 0.923397
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 2 Loss 0.948330
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 3 Loss 0.959612
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 4 Loss 1.040340
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 5 Loss 0.979842
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 6 Loss 0.837996
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 7 Loss 1.102030
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 8 Loss 0.919179
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 9 Loss 0.894645
+[attack_stealth_target_flip] Individual 3 Subject 1 Joint Epoch 10 Loss 1.107219
+[attack_stealth_target_flip] Subject 1 old ACC=0.6378 MF1=0.5918 buffer=1142 added=27
+[attack_stealth_target_flip] New Task 4/49 Subject 27 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 1 Loss 126.799591
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 2 Loss 84.985958
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 3 Loss 73.870677
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 4 Loss 65.987601
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 5 Loss 83.172213
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 6 Loss 59.415260
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 7 Loss 59.037787
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 8 Loss 51.564204
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 9 Loss 46.745622
+[attack_stealth_target_flip] Individual 4 Subject 27 CPC Epoch 10 Loss 47.836609
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 1 Loss 1.057424
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 2 Loss 0.999636
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 3 Loss 0.950549
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 4 Loss 0.920158
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 5 Loss 1.021599
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 6 Loss 1.166834
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 7 Loss 1.095334
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 8 Loss 0.900203
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 9 Loss 0.956967
+[attack_stealth_target_flip] Individual 4 Subject 27 Joint Epoch 10 Loss 0.933628
+[attack_stealth_target_flip] Subject 27 old ACC=0.6949 MF1=0.6712 buffer=1185 added=43
+[attack_stealth_target_flip] New Task 5/49 Subject 60 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 1 Loss 120.819087
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 2 Loss 84.666969
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 3 Loss 90.954648
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 4 Loss 80.251640
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 5 Loss 61.504648
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 6 Loss 64.353082
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 7 Loss 59.328008
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 8 Loss 42.921284
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 9 Loss 54.773004
+[attack_stealth_target_flip] Individual 5 Subject 60 CPC Epoch 10 Loss 39.473554
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 1 Loss 1.083105
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 2 Loss 1.430477
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 3 Loss 1.264381
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 4 Loss 1.131127
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 5 Loss 1.185803
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 6 Loss 1.028251
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 7 Loss 1.007582
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 8 Loss 1.127847
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 9 Loss 1.134487
+[attack_stealth_target_flip] Individual 5 Subject 60 Joint Epoch 10 Loss 1.107505
+[attack_stealth_target_flip] Subject 60 old ACC=0.7040 MF1=0.6887 buffer=1225 added=40
+[attack_stealth_target_flip] New Task 6/49 Subject 5 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 1 Loss 94.761093
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 2 Loss 121.784126
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 3 Loss 102.288582
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 4 Loss 78.527596
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 5 Loss 107.349948
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 6 Loss 87.126895
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 7 Loss 104.090368
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 8 Loss 81.872093
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 9 Loss 83.311340
+[attack_stealth_target_flip] Individual 6 Subject 5 CPC Epoch 10 Loss 81.522847
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 1 Loss 0.897678
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 2 Loss 0.748781
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 3 Loss 0.776377
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 4 Loss 0.678573
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 5 Loss 0.993111
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 6 Loss 0.836403
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 7 Loss 0.853365
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 8 Loss 0.752723
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 9 Loss 0.811295
+[attack_stealth_target_flip] Individual 6 Subject 5 Joint Epoch 10 Loss 0.895348
+[attack_stealth_target_flip] Subject 5 old ACC=0.6320 MF1=0.5757 buffer=1239 added=14
+[attack_stealth_target_flip] New Task 7/49 Subject 52 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 1 Loss 94.850316
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 2 Loss 86.162720
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 3 Loss 71.918758
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 4 Loss 52.573268
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 5 Loss 52.978699
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 6 Loss 52.653250
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 7 Loss 63.588762
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 8 Loss 64.390849
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 9 Loss 63.524054
+[attack_stealth_target_flip] Individual 7 Subject 52 CPC Epoch 10 Loss 60.118295
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 1 Loss 1.010858
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 2 Loss 0.819823
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 3 Loss 1.061114
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 4 Loss 0.970518
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 5 Loss 1.098122
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 6 Loss 1.018299
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 7 Loss 1.076439
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 8 Loss 1.061561
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 9 Loss 1.039217
+[attack_stealth_target_flip] Individual 7 Subject 52 Joint Epoch 10 Loss 0.991075
+[attack_stealth_target_flip] Subject 52 old ACC=0.6911 MF1=0.6730 buffer=1281 added=42
+[attack_stealth_target_flip] New Task 8/49 Subject 42 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 1 Loss 123.521205
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 2 Loss 86.946008
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 3 Loss 84.448204
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 4 Loss 66.224833
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 5 Loss 61.802002
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 6 Loss 56.040602
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 7 Loss 58.103482
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 8 Loss 69.651786
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 9 Loss 60.994500
+[attack_stealth_target_flip] Individual 8 Subject 42 CPC Epoch 10 Loss 39.686852
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 1 Loss 1.233623
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 2 Loss 1.482263
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 3 Loss 1.354876
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 4 Loss 1.161230
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 5 Loss 1.190277
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 6 Loss 1.195887
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 7 Loss 1.138032
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 8 Loss 1.480580
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 9 Loss 1.227126
+[attack_stealth_target_flip] Individual 8 Subject 42 Joint Epoch 10 Loss 1.571594
+[attack_stealth_target_flip] Subject 42 old ACC=0.6502 MF1=0.6186 buffer=1309 added=28
+[attack_stealth_target_flip] New Task 9/49 Subject 80 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 1 Loss 110.049894
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 2 Loss 78.454623
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 3 Loss 71.666669
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 4 Loss 74.316195
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 5 Loss 51.150862
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 6 Loss 68.498793
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 7 Loss 50.116868
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 8 Loss 58.739428
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 9 Loss 38.603757
+[attack_stealth_target_flip] Individual 9 Subject 80 CPC Epoch 10 Loss 59.138377
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 1 Loss 1.002410
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 2 Loss 0.931052
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 3 Loss 0.916284
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 4 Loss 1.007552
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 5 Loss 0.943759
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 6 Loss 0.884586
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 7 Loss 0.944552
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 8 Loss 1.014314
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 9 Loss 0.966936
+[attack_stealth_target_flip] Individual 9 Subject 80 Joint Epoch 10 Loss 0.854178
+[attack_stealth_target_flip] Subject 80 old ACC=0.7299 MF1=0.7066 buffer=1342 added=33
+[attack_stealth_target_flip] New Task 10/49 Subject 26 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 1 Loss 77.293406
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 2 Loss 97.411387
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 3 Loss 62.635145
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 4 Loss 69.805267
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 5 Loss 69.412273
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 6 Loss 92.512918
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 7 Loss 77.006872
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 8 Loss 88.145782
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 9 Loss 84.609542
+[attack_stealth_target_flip] Individual 10 Subject 26 CPC Epoch 10 Loss 65.674928
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 1 Loss 1.026928
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 2 Loss 1.030065
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 3 Loss 1.244950
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 4 Loss 0.951964
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 5 Loss 1.126812
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 6 Loss 1.032283
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 7 Loss 0.994486
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 8 Loss 1.284396
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 9 Loss 1.079060
+[attack_stealth_target_flip] Individual 10 Subject 26 Joint Epoch 10 Loss 1.043502
+[attack_stealth_target_flip] Subject 26 old ACC=0.6899 MF1=0.6589 buffer=1382 added=40
+[attack_stealth_target_flip] New Task 11/49 Subject 91 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 1 Loss 111.367640
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 2 Loss 107.419769
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 3 Loss 90.044650
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 4 Loss 88.047704
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 5 Loss 77.990252
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 6 Loss 68.523697
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 7 Loss 66.892358
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 8 Loss 53.687836
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 9 Loss 53.372992
+[attack_stealth_target_flip] Individual 11 Subject 91 CPC Epoch 10 Loss 60.488271
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 1 Loss 0.667858
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 2 Loss 0.635350
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 3 Loss 0.605812
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 4 Loss 0.647884
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 5 Loss 0.666784
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 6 Loss 0.604573
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 7 Loss 0.579686
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 8 Loss 0.666800
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 9 Loss 0.612069
+[attack_stealth_target_flip] Individual 11 Subject 91 Joint Epoch 10 Loss 0.696173
+[attack_stealth_target_flip] Subject 91 old ACC=0.6785 MF1=0.6348 buffer=1414 added=32
+[attack_stealth_target_flip] New Task 12/49 Subject 22 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 1 Loss 90.860508
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 2 Loss 77.966886
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 3 Loss 82.103561
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 4 Loss 56.768770
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 5 Loss 68.860209
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 6 Loss 66.697493
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 7 Loss 77.060005
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 8 Loss 47.079796
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 9 Loss 41.912542
+[attack_stealth_target_flip] Individual 12 Subject 22 CPC Epoch 10 Loss 55.386827
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 1 Loss 0.847647
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 2 Loss 0.778418
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 3 Loss 0.758142
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 4 Loss 0.967484
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 5 Loss 0.860693
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 6 Loss 0.678648
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 7 Loss 0.711398
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 8 Loss 0.789996
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 9 Loss 0.768412
+[attack_stealth_target_flip] Individual 12 Subject 22 Joint Epoch 10 Loss 0.998806
+[attack_stealth_target_flip] Subject 22 old ACC=0.6765 MF1=0.6410 buffer=1437 added=23
+[attack_stealth_target_flip] New Task 13/49 Subject 61 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 1 Loss 98.356476
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 2 Loss 106.061007
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 3 Loss 78.609207
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 4 Loss 68.854329
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 5 Loss 57.963595
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 6 Loss 82.418134
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 7 Loss 74.537320
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 8 Loss 56.285943
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 9 Loss 48.385066
+[attack_stealth_target_flip] Individual 13 Subject 61 CPC Epoch 10 Loss 69.186493
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 1 Loss 1.161757
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 2 Loss 1.035110
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 3 Loss 1.199761
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 4 Loss 1.286191
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 5 Loss 1.221036
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 6 Loss 1.008840
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 7 Loss 1.097344
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 8 Loss 1.217531
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 9 Loss 1.013311
+[attack_stealth_target_flip] Individual 13 Subject 61 Joint Epoch 10 Loss 1.116981
+[attack_stealth_target_flip] Subject 61 old ACC=0.6993 MF1=0.6786 buffer=1471 added=34
+[attack_stealth_target_flip] New Task 14/49 Subject 85 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 1 Loss 110.591479
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 2 Loss 79.295639
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 3 Loss 70.226679
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 4 Loss 79.902683
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 5 Loss 65.470178
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 6 Loss 57.450943
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 7 Loss 58.857736
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 8 Loss 43.597109
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 9 Loss 37.301427
+[attack_stealth_target_flip] Individual 14 Subject 85 CPC Epoch 10 Loss 46.887171
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 1 Loss 0.658450
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 2 Loss 0.597293
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 3 Loss 0.647226
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 4 Loss 0.541565
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 5 Loss 0.568022
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 6 Loss 0.598692
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 7 Loss 0.598901
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 8 Loss 0.554515
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 9 Loss 0.666250
+[attack_stealth_target_flip] Individual 14 Subject 85 Joint Epoch 10 Loss 0.637466
+[attack_stealth_target_flip] Subject 85 old ACC=0.7186 MF1=0.7044 buffer=1514 added=43
+[attack_stealth_target_flip] New Task 15/49 Subject 17 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 1 Loss 109.946103
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 2 Loss 76.796257
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 3 Loss 70.536212
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 4 Loss 76.627745
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 5 Loss 52.328611
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 6 Loss 53.956234
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 7 Loss 50.458808
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 8 Loss 63.896854
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 9 Loss 50.301638
+[attack_stealth_target_flip] Individual 15 Subject 17 CPC Epoch 10 Loss 45.687449
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 1 Loss 1.047794
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 2 Loss 1.004284
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 3 Loss 1.007775
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 4 Loss 1.051826
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 5 Loss 0.877894
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 6 Loss 0.963013
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 7 Loss 0.800007
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 8 Loss 0.881396
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 9 Loss 0.919525
+[attack_stealth_target_flip] Individual 15 Subject 17 Joint Epoch 10 Loss 1.079003
+[attack_stealth_target_flip] Subject 17 old ACC=0.7013 MF1=0.6878 buffer=1546 added=32
+[attack_stealth_target_flip] New Task 16/49 Subject 36 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 1 Loss 112.562121
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 2 Loss 98.078461
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 3 Loss 94.107903
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 4 Loss 77.501841
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 5 Loss 67.324085
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 6 Loss 58.855630
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 7 Loss 66.611493
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 8 Loss 63.467747
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 9 Loss 54.847763
+[attack_stealth_target_flip] Individual 16 Subject 36 CPC Epoch 10 Loss 45.853395
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 1 Loss 0.659462
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 2 Loss 0.628982
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 3 Loss 0.596459
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 4 Loss 0.685165
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 5 Loss 0.676584
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 6 Loss 0.668344
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 7 Loss 0.577279
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 8 Loss 0.621569
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 9 Loss 0.575585
+[attack_stealth_target_flip] Individual 16 Subject 36 Joint Epoch 10 Loss 0.616910
+[attack_stealth_target_flip] Subject 36 old ACC=0.7025 MF1=0.6908 buffer=1588 added=42
+[attack_stealth_target_flip] New Task 17/49 Subject 98 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 1 Loss 260.977346
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 2 Loss 185.753070
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 3 Loss 205.895515
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 4 Loss 230.746429
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 5 Loss 281.344439
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 6 Loss 132.629008
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 7 Loss 99.709490
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 8 Loss 102.572845
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 9 Loss 144.468287
+[attack_stealth_target_flip] Individual 17 Subject 98 CPC Epoch 10 Loss 144.436432
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 1 Loss 1.193975
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 2 Loss 1.310546
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 3 Loss 1.269985
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 4 Loss 1.264091
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 5 Loss 1.147887
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 6 Loss 1.266892
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 7 Loss 1.249337
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 8 Loss 1.313275
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 9 Loss 1.152531
+[attack_stealth_target_flip] Individual 17 Subject 98 Joint Epoch 10 Loss 1.279547
+[attack_stealth_target_flip] Subject 98 old ACC=0.5278 MF1=0.4667 buffer=1613 added=25
+[attack_stealth_target_flip] New Task 18/49 Subject 33 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 1 Loss 107.812139
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 2 Loss 87.469922
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 3 Loss 79.107689
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 4 Loss 63.467041
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 5 Loss 49.651694
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 6 Loss 49.775743
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 7 Loss 44.044545
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 8 Loss 48.059361
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 9 Loss 46.906907
+[attack_stealth_target_flip] Individual 18 Subject 33 CPC Epoch 10 Loss 40.323100
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 1 Loss 1.291287
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 2 Loss 1.242379
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 3 Loss 1.304461
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 4 Loss 0.934356
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 5 Loss 1.220288
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 6 Loss 1.260327
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 7 Loss 1.175201
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 8 Loss 1.204635
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 9 Loss 1.158700
+[attack_stealth_target_flip] Individual 18 Subject 33 Joint Epoch 10 Loss 1.092453
+[attack_stealth_target_flip] Subject 33 old ACC=0.6297 MF1=0.5906 buffer=1657 added=44
+[attack_stealth_target_flip] New Task 19/49 Subject 55 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 1 Loss 97.747599
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 2 Loss 78.552439
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 3 Loss 75.942128
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 4 Loss 64.535624
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 5 Loss 68.895992
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 6 Loss 65.346802
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 7 Loss 64.806685
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 8 Loss 48.868134
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 9 Loss 47.569828
+[attack_stealth_target_flip] Individual 19 Subject 55 CPC Epoch 10 Loss 55.088388
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 1 Loss 0.832818
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 2 Loss 1.065067
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 3 Loss 0.857083
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 4 Loss 0.989272
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 5 Loss 0.849185
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 6 Loss 1.119548
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 7 Loss 0.873475
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 8 Loss 0.878345
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 9 Loss 1.015053
+[attack_stealth_target_flip] Individual 19 Subject 55 Joint Epoch 10 Loss 1.053637
+[attack_stealth_target_flip] Subject 55 old ACC=0.6912 MF1=0.6687 buffer=1697 added=40
+[attack_stealth_target_flip] New Task 20/49 Subject 86 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 1 Loss 98.679967
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 2 Loss 94.623103
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 3 Loss 83.588796
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 4 Loss 79.363355
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 5 Loss 57.867924
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 6 Loss 63.715844
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 7 Loss 53.479514
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 8 Loss 44.130446
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 9 Loss 45.727137
+[attack_stealth_target_flip] Individual 20 Subject 86 CPC Epoch 10 Loss 37.546506
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 1 Loss 0.786584
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 2 Loss 0.798065
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 3 Loss 0.910694
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 4 Loss 0.757773
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 5 Loss 0.784660
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 6 Loss 0.863513
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 7 Loss 0.794989
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 8 Loss 0.867504
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 9 Loss 0.890782
+[attack_stealth_target_flip] Individual 20 Subject 86 Joint Epoch 10 Loss 0.815751
+[attack_stealth_target_flip] Subject 86 old ACC=0.7046 MF1=0.6899 buffer=1734 added=37
+[attack_stealth_target_flip] New Task 21/49 Subject 54 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 1 Loss 104.667745
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 2 Loss 61.087411
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 3 Loss 57.919319
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 4 Loss 52.725740
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 5 Loss 55.165763
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 6 Loss 39.348935
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 7 Loss 43.281657
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 8 Loss 55.793437
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 9 Loss 41.624078
+[attack_stealth_target_flip] Individual 21 Subject 54 CPC Epoch 10 Loss 57.862940
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 1 Loss 0.838108
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 2 Loss 1.087672
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 3 Loss 0.807921
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 4 Loss 0.926186
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 5 Loss 0.778366
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 6 Loss 0.747852
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 7 Loss 0.839352
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 8 Loss 0.702483
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 9 Loss 0.788370
+[attack_stealth_target_flip] Individual 21 Subject 54 Joint Epoch 10 Loss 0.819026
+[attack_stealth_target_flip] Subject 54 old ACC=0.7078 MF1=0.6847 buffer=1772 added=38
+[attack_stealth_target_flip] New Task 22/49 Subject 84 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 1 Loss 126.281652
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 2 Loss 79.524762
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 3 Loss 79.089951
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 4 Loss 70.294123
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 5 Loss 66.699043
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 6 Loss 54.667875
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 7 Loss 57.001952
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 8 Loss 61.064835
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 9 Loss 48.513241
+[attack_stealth_target_flip] Individual 22 Subject 84 CPC Epoch 10 Loss 63.972675
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 1 Loss 1.264915
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 2 Loss 1.400302
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 3 Loss 1.301708
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 4 Loss 1.326002
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 5 Loss 1.388852
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 6 Loss 1.454793
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 7 Loss 1.365326
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 8 Loss 1.360234
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 9 Loss 1.339835
+[attack_stealth_target_flip] Individual 22 Subject 84 Joint Epoch 10 Loss 1.388077
+[attack_stealth_target_flip] Subject 84 old ACC=0.7159 MF1=0.7000 buffer=1815 added=43
+[attack_stealth_target_flip] New Task 23/49 Subject 49 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 1 Loss 90.131856
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 2 Loss 64.048782
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 3 Loss 76.445507
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 4 Loss 68.097224
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 5 Loss 57.379599
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 6 Loss 40.389754
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 7 Loss 43.528435
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 8 Loss 37.744835
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 9 Loss 39.015724
+[attack_stealth_target_flip] Individual 23 Subject 49 CPC Epoch 10 Loss 47.283016
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 1 Loss 0.744340
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 2 Loss 0.560363
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 3 Loss 0.797855
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 4 Loss 0.589722
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 5 Loss 0.755603
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 6 Loss 0.771382
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 7 Loss 0.556769
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 8 Loss 0.781603
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 9 Loss 0.604452
+[attack_stealth_target_flip] Individual 23 Subject 49 Joint Epoch 10 Loss 0.578121
+[attack_stealth_target_flip] Subject 49 old ACC=0.6980 MF1=0.6825 buffer=1850 added=35
+[attack_stealth_target_flip] New Task 24/49 Subject 3 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 1 Loss 81.429746
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 2 Loss 83.695840
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 3 Loss 89.751078
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 4 Loss 87.561572
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 5 Loss 73.515671
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 6 Loss 80.390602
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 7 Loss 85.873144
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 8 Loss 79.460848
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 9 Loss 119.204539
+[attack_stealth_target_flip] Individual 24 Subject 3 CPC Epoch 10 Loss 88.806712
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 1 Loss 0.660688
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 2 Loss 0.849020
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 3 Loss 0.746733
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 4 Loss 0.734163
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 5 Loss 0.626342
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 6 Loss 0.689428
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 7 Loss 0.679473
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 8 Loss 0.730908
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 9 Loss 0.684515
+[attack_stealth_target_flip] Individual 24 Subject 3 Joint Epoch 10 Loss 0.759888
+[attack_stealth_target_flip] Subject 3 old ACC=0.6554 MF1=0.6121 buffer=1857 added=7
+[attack_stealth_target_flip] New Task 25/49 Subject 2 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 1 Loss 77.746394
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 2 Loss 67.911458
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 3 Loss 73.291472
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 4 Loss 56.979432
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 5 Loss 54.638432
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 6 Loss 61.775500
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 7 Loss 59.579865
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 8 Loss 71.596436
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 9 Loss 51.502911
+[attack_stealth_target_flip] Individual 25 Subject 2 CPC Epoch 10 Loss 61.382271
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 1 Loss 0.779264
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 2 Loss 0.721217
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 3 Loss 0.812506
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 4 Loss 0.650997
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 5 Loss 0.686684
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 6 Loss 0.606913
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 7 Loss 0.753021
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 8 Loss 0.712052
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 9 Loss 0.607492
+[attack_stealth_target_flip] Individual 25 Subject 2 Joint Epoch 10 Loss 0.707075
+[attack_stealth_target_flip] Subject 2 old ACC=0.6768 MF1=0.6455 buffer=1892 added=35
+[attack_stealth_target_flip] New Task 26/49 Subject 10 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 1 Loss 89.233139
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 2 Loss 58.010750
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 3 Loss 73.162879
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 4 Loss 55.003326
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 5 Loss 57.263098
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 6 Loss 44.041602
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 7 Loss 45.379131
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 8 Loss 60.546187
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 9 Loss 52.198601
+[attack_stealth_target_flip] Individual 26 Subject 10 CPC Epoch 10 Loss 47.685178
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 1 Loss 0.677142
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 2 Loss 0.547187
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 3 Loss 0.688557
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 4 Loss 0.585138
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 5 Loss 0.698043
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 6 Loss 0.698332
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 7 Loss 0.651853
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 8 Loss 0.658088
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 9 Loss 0.637261
+[attack_stealth_target_flip] Individual 26 Subject 10 Joint Epoch 10 Loss 0.708894
+[attack_stealth_target_flip] Subject 10 old ACC=0.6958 MF1=0.6656 buffer=1921 added=29
+[attack_stealth_target_flip] New Task 27/49 Subject 87 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 1 Loss 105.057177
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 2 Loss 100.028511
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 3 Loss 82.657511
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 4 Loss 64.684096
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 5 Loss 58.798658
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 6 Loss 66.307515
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 7 Loss 61.813180
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 8 Loss 56.173964
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 9 Loss 60.057837
+[attack_stealth_target_flip] Individual 27 Subject 87 CPC Epoch 10 Loss 69.457052
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 1 Loss 0.866334
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 2 Loss 0.843276
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 3 Loss 0.891932
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 4 Loss 0.869417
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 5 Loss 0.907549
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 6 Loss 0.842721
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 7 Loss 0.884376
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 8 Loss 0.863181
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 9 Loss 0.912220
+[attack_stealth_target_flip] Individual 27 Subject 87 Joint Epoch 10 Loss 0.762143
+[attack_stealth_target_flip] Subject 87 old ACC=0.6946 MF1=0.6634 buffer=1960 added=39
+[attack_stealth_target_flip] New Task 28/49 Subject 15 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 1 Loss 66.159195
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 2 Loss 90.268047
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 3 Loss 74.902082
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 4 Loss 92.010793
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 5 Loss 90.778077
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 6 Loss 81.796438
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 7 Loss 77.779385
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 8 Loss 85.503703
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 9 Loss 87.174800
+[attack_stealth_target_flip] Individual 28 Subject 15 CPC Epoch 10 Loss 80.017353
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 1 Loss 0.884732
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 2 Loss 0.754929
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 3 Loss 0.762856
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 4 Loss 0.764528
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 5 Loss 1.018877
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 6 Loss 1.204048
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 7 Loss 0.708349
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 8 Loss 0.615653
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 9 Loss 0.736218
+[attack_stealth_target_flip] Individual 28 Subject 15 Joint Epoch 10 Loss 0.846159
+[attack_stealth_target_flip] Subject 15 old ACC=0.6925 MF1=0.6682 buffer=1997 added=37
+[attack_stealth_target_flip] New Task 29/49 Subject 95 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 1 Loss 94.700147
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 2 Loss 70.554138
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 3 Loss 72.167639
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 4 Loss 64.070989
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 5 Loss 52.890004
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 6 Loss 55.065380
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 7 Loss 48.525314
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 8 Loss 58.091587
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 9 Loss 56.742007
+[attack_stealth_target_flip] Individual 29 Subject 95 CPC Epoch 10 Loss 39.376973
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 1 Loss 0.597517
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 2 Loss 0.613988
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 3 Loss 0.640285
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 4 Loss 0.643252
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 5 Loss 0.619119
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 6 Loss 0.679705
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 7 Loss 0.578578
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 8 Loss 0.694418
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 9 Loss 0.666568
+[attack_stealth_target_flip] Individual 29 Subject 95 Joint Epoch 10 Loss 0.642198
+[attack_stealth_target_flip] Subject 95 old ACC=0.7062 MF1=0.6785 buffer=2028 added=31
+[attack_stealth_target_flip] New Task 30/49 Subject 57 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 1 Loss 98.044523
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 2 Loss 77.714933
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 3 Loss 66.943010
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 4 Loss 60.593449
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 5 Loss 48.698876
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 6 Loss 47.157467
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 7 Loss 48.845566
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 8 Loss 54.755980
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 9 Loss 51.907993
+[attack_stealth_target_flip] Individual 30 Subject 57 CPC Epoch 10 Loss 46.649940
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 1 Loss 0.882460
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 2 Loss 0.780333
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 3 Loss 0.952321
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 4 Loss 1.530915
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 5 Loss 0.786688
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 6 Loss 0.871630
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 7 Loss 0.726787
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 8 Loss 0.765222
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 9 Loss 0.848089
+[attack_stealth_target_flip] Individual 30 Subject 57 Joint Epoch 10 Loss 0.847160
+[attack_stealth_target_flip] Subject 57 old ACC=0.6459 MF1=0.6175 buffer=2076 added=48
+[attack_stealth_target_flip] New Task 31/49 Subject 70 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 1 Loss 92.885262
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 2 Loss 68.923171
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 3 Loss 68.636960
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 4 Loss 48.917189
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 5 Loss 63.341601
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 6 Loss 49.868603
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 7 Loss 54.541251
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 8 Loss 67.669930
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 9 Loss 48.639085
+[attack_stealth_target_flip] Individual 31 Subject 70 CPC Epoch 10 Loss 40.656368
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 1 Loss 0.766386
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 2 Loss 0.840710
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 3 Loss 0.935333
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 4 Loss 0.962716
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 5 Loss 0.943625
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 6 Loss 0.928772
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 7 Loss 0.924283
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 8 Loss 0.880653
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 9 Loss 0.911657
+[attack_stealth_target_flip] Individual 31 Subject 70 Joint Epoch 10 Loss 0.861525
+[attack_stealth_target_flip] Subject 70 old ACC=0.6584 MF1=0.6364 buffer=2116 added=40
+[attack_stealth_target_flip] New Task 32/49 Subject 11 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 1 Loss 96.214778
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 2 Loss 74.143041
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 3 Loss 64.927016
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 4 Loss 64.802808
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 5 Loss 56.746414
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 6 Loss 48.371010
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 7 Loss 40.203367
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 8 Loss 44.017628
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 9 Loss 34.900328
+[attack_stealth_target_flip] Individual 32 Subject 11 CPC Epoch 10 Loss 48.338020
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 1 Loss 0.968906
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 2 Loss 0.875598
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 3 Loss 1.024611
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 4 Loss 0.977354
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 5 Loss 1.040804
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 6 Loss 1.037774
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 7 Loss 0.961832
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 8 Loss 0.974095
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 9 Loss 0.965500
+[attack_stealth_target_flip] Individual 32 Subject 11 Joint Epoch 10 Loss 0.855543
+[attack_stealth_target_flip] Subject 11 old ACC=0.6669 MF1=0.6358 buffer=2158 added=42
+[attack_stealth_target_flip] New Task 33/49 Subject 47 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 1 Loss 108.041031
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 2 Loss 102.624151
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 3 Loss 77.922054
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 4 Loss 65.906078
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 5 Loss 88.218402
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 6 Loss 54.482632
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 7 Loss 51.182776
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 8 Loss 55.449595
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 9 Loss 55.725657
+[attack_stealth_target_flip] Individual 33 Subject 47 CPC Epoch 10 Loss 40.407263
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 1 Loss 0.858513
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 2 Loss 0.696517
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 3 Loss 0.667027
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 4 Loss 0.709716
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 5 Loss 0.593747
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 6 Loss 0.675849
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 7 Loss 0.674839
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 8 Loss 0.632063
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 9 Loss 0.700341
+[attack_stealth_target_flip] Individual 33 Subject 47 Joint Epoch 10 Loss 0.888889
+[attack_stealth_target_flip] Subject 47 old ACC=0.6975 MF1=0.6824 buffer=2197 added=39
+[attack_stealth_target_flip] New Task 34/49 Subject 65 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 1 Loss 94.757446
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 2 Loss 76.930643
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 3 Loss 71.061386
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 4 Loss 56.036456
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 5 Loss 60.920736
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 6 Loss 53.550642
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 7 Loss 56.458242
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 8 Loss 64.696064
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 9 Loss 53.520563
+[attack_stealth_target_flip] Individual 34 Subject 65 CPC Epoch 10 Loss 53.553798
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 1 Loss 1.423747
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 2 Loss 0.942552
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 3 Loss 1.909153
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 4 Loss 0.684732
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 5 Loss 1.006112
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 6 Loss 0.509176
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 7 Loss 0.930741
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 8 Loss 0.649524
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 9 Loss 1.637091
+[attack_stealth_target_flip] Individual 34 Subject 65 Joint Epoch 10 Loss 0.610498
+[attack_stealth_target_flip] Subject 65 old ACC=0.6447 MF1=0.6208 buffer=2242 added=45
+[attack_stealth_target_flip] New Task 35/49 Subject 66 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 1 Loss 119.923233
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 2 Loss 69.747161
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 3 Loss 54.249887
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 4 Loss 79.255475
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 5 Loss 46.210747
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 6 Loss 58.811693
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 7 Loss 45.239353
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 8 Loss 57.297234
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 9 Loss 50.587140
+[attack_stealth_target_flip] Individual 35 Subject 66 CPC Epoch 10 Loss 48.007785
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 1 Loss 0.884074
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 2 Loss 0.805620
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 3 Loss 0.857275
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 4 Loss 0.778339
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 5 Loss 0.773041
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 6 Loss 0.977649
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 7 Loss 0.838513
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 8 Loss 0.836797
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 9 Loss 0.802890
+[attack_stealth_target_flip] Individual 35 Subject 66 Joint Epoch 10 Loss 0.961450
+[attack_stealth_target_flip] Subject 66 old ACC=0.6850 MF1=0.6672 buffer=2271 added=29
+[attack_stealth_target_flip] New Task 36/49 Subject 96 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 1 Loss 102.973289
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 2 Loss 113.959134
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 3 Loss 85.179840
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 4 Loss 60.468216
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 5 Loss 63.619874
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 6 Loss 84.173065
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 7 Loss 72.195369
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 8 Loss 55.732830
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 9 Loss 50.175462
+[attack_stealth_target_flip] Individual 36 Subject 96 CPC Epoch 10 Loss 47.850573
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 1 Loss 0.736260
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 2 Loss 0.936709
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 3 Loss 0.863862
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 4 Loss 0.858963
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 5 Loss 0.821730
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 6 Loss 0.900918
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 7 Loss 0.961417
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 8 Loss 0.851272
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 9 Loss 1.163515
+[attack_stealth_target_flip] Individual 36 Subject 96 Joint Epoch 10 Loss 1.119618
+[attack_stealth_target_flip] Subject 96 old ACC=0.6476 MF1=0.6031 buffer=2301 added=30
+[attack_stealth_target_flip] New Task 37/49 Subject 83 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 1 Loss 98.262281
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 2 Loss 72.598300
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 3 Loss 67.841909
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 4 Loss 69.752466
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 5 Loss 61.704337
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 6 Loss 60.734974
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 7 Loss 62.565273
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 8 Loss 63.269883
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 9 Loss 46.117659
+[attack_stealth_target_flip] Individual 37 Subject 83 CPC Epoch 10 Loss 57.264139
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 1 Loss 0.682975
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 2 Loss 0.699095
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 3 Loss 0.641441
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 4 Loss 0.589759
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 5 Loss 0.687696
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 6 Loss 0.572056
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 7 Loss 0.654919
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 8 Loss 0.722771
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 9 Loss 0.831338
+[attack_stealth_target_flip] Individual 37 Subject 83 Joint Epoch 10 Loss 0.665560
+[attack_stealth_target_flip] Subject 83 old ACC=0.7067 MF1=0.6935 buffer=2343 added=42
+[attack_stealth_target_flip] New Task 38/49 Subject 9 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 1 Loss 86.677195
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 2 Loss 93.102376
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 3 Loss 86.090963
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 4 Loss 103.988645
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 5 Loss 113.000704
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 6 Loss 103.675863
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 7 Loss 89.338498
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 8 Loss 88.652697
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 9 Loss 89.475558
+[attack_stealth_target_flip] Individual 38 Subject 9 CPC Epoch 10 Loss 110.150970
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 1 Loss 1.076032
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 2 Loss 1.020057
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 3 Loss 1.133115
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 4 Loss 0.946052
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 5 Loss 0.970059
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 6 Loss 0.908638
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 7 Loss 0.990812
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 8 Loss 0.980380
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 9 Loss 1.092664
+[attack_stealth_target_flip] Individual 38 Subject 9 Joint Epoch 10 Loss 0.947475
+[attack_stealth_target_flip] Subject 9 old ACC=0.6681 MF1=0.6324 buffer=2359 added=16
+[attack_stealth_target_flip] New Task 39/49 Subject 46 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 1 Loss 116.526161
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 2 Loss 79.943830
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 3 Loss 74.960711
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 4 Loss 71.738304
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 5 Loss 59.968243
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 6 Loss 80.354960
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 7 Loss 81.157397
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 8 Loss 50.571915
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 9 Loss 56.955565
+[attack_stealth_target_flip] Individual 39 Subject 46 CPC Epoch 10 Loss 48.167074
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 1 Loss 0.876667
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 2 Loss 0.911810
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 3 Loss 0.797862
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 4 Loss 0.815350
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 5 Loss 0.925942
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 6 Loss 0.988904
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 7 Loss 0.895029
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 8 Loss 0.962727
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 9 Loss 0.861593
+[attack_stealth_target_flip] Individual 39 Subject 46 Joint Epoch 10 Loss 0.958873
+[attack_stealth_target_flip] Subject 46 old ACC=0.7017 MF1=0.6799 buffer=2397 added=38
+[attack_stealth_target_flip] New Task 40/49 Subject 31 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 1 Loss 108.160609
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 2 Loss 96.271975
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 3 Loss 93.693909
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 4 Loss 70.234104
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 5 Loss 50.355001
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 6 Loss 60.652541
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 7 Loss 57.050134
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 8 Loss 81.226718
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 9 Loss 45.766202
+[attack_stealth_target_flip] Individual 40 Subject 31 CPC Epoch 10 Loss 53.671421
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 1 Loss 0.765456
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 2 Loss 0.929588
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 3 Loss 0.975411
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 4 Loss 0.909371
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 5 Loss 0.998790
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 6 Loss 0.778797
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 7 Loss 0.803114
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 8 Loss 0.827725
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 9 Loss 1.065610
+[attack_stealth_target_flip] Individual 40 Subject 31 Joint Epoch 10 Loss 0.884488
+[attack_stealth_target_flip] Subject 31 old ACC=0.6856 MF1=0.6563 buffer=2435 added=38
+[attack_stealth_target_flip] New Task 41/49 Subject 4 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 1 Loss 65.065941
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 2 Loss 70.806315
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 3 Loss 76.888715
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 4 Loss 69.455332
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 5 Loss 67.412094
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 6 Loss 73.791451
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 7 Loss 80.101634
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 8 Loss 55.845557
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 9 Loss 65.016190
+[attack_stealth_target_flip] Individual 41 Subject 4 CPC Epoch 10 Loss 59.636086
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 1 Loss 0.951624
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 2 Loss 0.961738
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 3 Loss 1.041271
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 4 Loss 1.012504
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 5 Loss 0.955460
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 6 Loss 0.957989
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 7 Loss 0.987175
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 8 Loss 0.856600
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 9 Loss 0.917812
+[attack_stealth_target_flip] Individual 41 Subject 4 Joint Epoch 10 Loss 1.095839
+[attack_stealth_target_flip] Subject 4 old ACC=0.5853 MF1=0.5378 buffer=2457 added=22
+[attack_stealth_target_flip] New Task 42/49 Subject 19 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 1 Loss 81.959574
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 2 Loss 66.984458
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 3 Loss 77.984693
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 4 Loss 56.293671
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 5 Loss 71.503728
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 6 Loss 63.395927
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 7 Loss 48.505047
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 8 Loss 49.806344
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 9 Loss 62.071480
+[attack_stealth_target_flip] Individual 42 Subject 19 CPC Epoch 10 Loss 42.158004
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 1 Loss 0.944670
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 2 Loss 1.465395
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 3 Loss 1.122424
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 4 Loss 1.205564
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 5 Loss 1.004810
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 6 Loss 1.008587
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 7 Loss 1.267419
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 8 Loss 1.098387
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 9 Loss 1.111361
+[attack_stealth_target_flip] Individual 42 Subject 19 Joint Epoch 10 Loss 1.325516
+[attack_stealth_target_flip] Subject 19 old ACC=0.6587 MF1=0.6428 buffer=2489 added=32
+[attack_stealth_target_flip] New Task 43/49 Subject 99 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 1 Loss 132.987404
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 2 Loss 83.185931
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 3 Loss 65.120818
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 4 Loss 61.685472
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 5 Loss 67.636236
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 6 Loss 52.207471
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 7 Loss 56.014347
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 8 Loss 54.919403
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 9 Loss 60.651816
+[attack_stealth_target_flip] Individual 43 Subject 99 CPC Epoch 10 Loss 60.695433
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 1 Loss 0.741214
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 2 Loss 0.703831
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 3 Loss 0.721200
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 4 Loss 0.636082
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 5 Loss 0.699171
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 6 Loss 0.840581
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 7 Loss 0.711749
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 8 Loss 0.729381
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 9 Loss 0.722633
+[attack_stealth_target_flip] Individual 43 Subject 99 Joint Epoch 10 Loss 0.683483
+[attack_stealth_target_flip] Subject 99 old ACC=0.7211 MF1=0.6976 buffer=2527 added=38
+[attack_stealth_target_flip] New Task 44/49 Subject 63 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 1 Loss 123.925481
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 2 Loss 82.950493
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 3 Loss 92.454236
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 4 Loss 70.131494
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 5 Loss 84.474528
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 6 Loss 71.532583
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 7 Loss 75.689504
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 8 Loss 61.938086
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 9 Loss 61.337845
+[attack_stealth_target_flip] Individual 44 Subject 63 CPC Epoch 10 Loss 69.403819
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 1 Loss 0.864969
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 2 Loss 0.844929
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 3 Loss 0.941457
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 4 Loss 0.882926
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 5 Loss 0.872196
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 6 Loss 0.856058
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 7 Loss 0.932932
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 8 Loss 0.855785
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 9 Loss 0.793170
+[attack_stealth_target_flip] Individual 44 Subject 63 Joint Epoch 10 Loss 0.878864
+[attack_stealth_target_flip] Subject 63 old ACC=0.7045 MF1=0.6674 buffer=2570 added=43
+[attack_stealth_target_flip] New Task 45/49 Subject 81 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 1 Loss 90.174884
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 2 Loss 55.406907
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 3 Loss 63.740733
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 4 Loss 53.736622
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 5 Loss 46.509359
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 6 Loss 38.514623
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 7 Loss 42.595829
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 8 Loss 45.811692
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 9 Loss 46.274717
+[attack_stealth_target_flip] Individual 45 Subject 81 CPC Epoch 10 Loss 42.979144
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 1 Loss 0.876168
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 2 Loss 0.842953
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 3 Loss 0.752997
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 4 Loss 0.739144
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 5 Loss 0.861459
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 6 Loss 0.850020
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 7 Loss 0.780223
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 8 Loss 0.813444
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 9 Loss 0.824343
+[attack_stealth_target_flip] Individual 45 Subject 81 Joint Epoch 10 Loss 0.737020
+[attack_stealth_target_flip] Subject 81 old ACC=0.7007 MF1=0.6817 buffer=2605 added=35
+[attack_stealth_target_flip] New Task 46/49 Subject 25 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 1 Loss 111.904338
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 2 Loss 97.913839
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 3 Loss 71.955844
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 4 Loss 70.681127
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 5 Loss 60.635796
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 6 Loss 66.590472
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 7 Loss 64.953515
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 8 Loss 57.049511
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 9 Loss 56.824607
+[attack_stealth_target_flip] Individual 46 Subject 25 CPC Epoch 10 Loss 54.955861
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 1 Loss 0.652660
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 2 Loss 0.677568
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 3 Loss 0.616253
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 4 Loss 0.559034
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 5 Loss 0.658364
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 6 Loss 0.596035
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 7 Loss 0.605870
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 8 Loss 0.588422
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 9 Loss 0.635235
+[attack_stealth_target_flip] Individual 46 Subject 25 Joint Epoch 10 Loss 0.600917
+[attack_stealth_target_flip] Subject 25 old ACC=0.7210 MF1=0.6900 buffer=2635 added=30
+[attack_stealth_target_flip] New Task 47/49 Subject 97 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 1 Loss 101.216787
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 2 Loss 81.457631
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 3 Loss 73.213996
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 4 Loss 52.633715
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 5 Loss 52.223946
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 6 Loss 60.472287
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 7 Loss 45.444359
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 8 Loss 52.296678
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 9 Loss 41.636589
+[attack_stealth_target_flip] Individual 47 Subject 97 CPC Epoch 10 Loss 48.782734
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 1 Loss 0.658457
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 2 Loss 0.738608
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 3 Loss 0.812256
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 4 Loss 0.726295
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 5 Loss 0.658788
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 6 Loss 0.934240
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 7 Loss 0.708786
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 8 Loss 0.596356
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 9 Loss 0.722766
+[attack_stealth_target_flip] Individual 47 Subject 97 Joint Epoch 10 Loss 0.723894
+[attack_stealth_target_flip] Subject 97 old ACC=0.6890 MF1=0.6552 buffer=2675 added=40
+[attack_stealth_target_flip] New Task 48/49 Subject 20 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 1 Loss 98.792216
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 2 Loss 73.496824
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 3 Loss 56.674423
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 4 Loss 56.940440
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 5 Loss 62.656968
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 6 Loss 49.642897
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 7 Loss 39.178644
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 8 Loss 37.442015
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 9 Loss 44.559564
+[attack_stealth_target_flip] Individual 48 Subject 20 CPC Epoch 10 Loss 32.879506
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 1 Loss 0.726365
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 2 Loss 0.627813
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 3 Loss 0.783457
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 4 Loss 0.744301
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 5 Loss 0.677913
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 6 Loss 0.689247
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 7 Loss 0.728780
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 8 Loss 0.739841
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 9 Loss 0.818227
+[attack_stealth_target_flip] Individual 48 Subject 20 Joint Epoch 10 Loss 0.739565
+[attack_stealth_target_flip] Subject 20 old ACC=0.6890 MF1=0.6709 buffer=2715 added=40
+[attack_stealth_target_flip] New Task 49/49 Subject 13 attack=stealth_target_flip
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 1 Loss 109.733482
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 2 Loss 69.752607
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 3 Loss 71.754412
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 4 Loss 73.403229
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 5 Loss 53.766631
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 6 Loss 58.276269
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 7 Loss 59.262986
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 8 Loss 46.298122
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 9 Loss 45.060347
+[attack_stealth_target_flip] Individual 49 Subject 13 CPC Epoch 10 Loss 39.776058
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 1 Loss 0.767876
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 2 Loss 0.918324
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 3 Loss 0.827470
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 4 Loss 0.807521
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 5 Loss 0.789773
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 6 Loss 0.765774
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 7 Loss 0.720273
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 8 Loss 0.891933
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 9 Loss 0.812189
+[attack_stealth_target_flip] Individual 49 Subject 13 Joint Epoch 10 Loss 0.925864
+[attack_stealth_target_flip] Subject 13 old ACC=0.6878 MF1=0.6657 buffer=2742 added=27

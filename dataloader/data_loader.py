@@ -33,21 +33,24 @@ class BuildBufferDataset(Dataset):
         self.new_len = int(0.2 * self.len)
 
         if self.new_len < len(train_path[0]) - args.train_len:
-            old_sample_idx = list(np.random.choice(range(args.train_len), self.old_len, replace=False))
+            old_sample_idx = list(np.random.choice(range(args.train_len), self.old_len,
+                                                   replace=args.train_len < self.old_len))
             new_sample_idx = list(np.random.choice(range(args.train_len, len(train_path[0])),
-                                                   self.new_len, replace=False))
+                                                   self.new_len,
+                                                   replace=(len(train_path[0]) - args.train_len) < self.new_len))
             sample_idx = []
             for x in old_sample_idx:
                 sample_idx.append(x)
             for y in new_sample_idx:
                 sample_idx.append(y)
         else:
-            sample_idx = list(np.random.choice(range(len(train_path[0])), self.len, replace=False))
+            sample_idx = list(np.random.choice(range(len(train_path[0])), self.len,
+                                               replace=len(train_path[0]) < self.len))
         if len(sample_idx) < self.len:
             another = list(np.random.choice(range(args.train_len), 1, replace=False))
             sample_idx.append(another[0])
-        self.train_path_data = [train_path[0][i-1] for i in sample_idx]
-        self.train_path_label = [train_path[1][i-1] for i in sample_idx]
+        self.train_path_data = [train_path[0][i] for i in sample_idx]
+        self.train_path_label = [train_path[1][i] for i in sample_idx]
 
     def __getitem__(self, index):
         x_data_new = np.load(self.new_path[0][index])
@@ -80,5 +83,9 @@ class Builder(object):
         super(Builder, self).__init__()
         self.data_set = args.dataset
         self.data_path = data_path
+        self.args = args
         self.Dataset = BuildDataset(self.data_path, self.data_set)
-        self.BufferDataset = BuildBufferDataset(self.data_path, args.train_path, self.data_set, args)
+
+    @property
+    def BufferDataset(self):
+        return BuildBufferDataset(self.data_path, self.args.train_path, self.data_set, self.args)

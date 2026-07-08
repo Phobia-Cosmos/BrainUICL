@@ -1,0 +1,52 @@
+{
+  "source_subjects": [
+    7,
+    16,
+    18,
+    23
+  ],
+  "old_subjects": [
+    6,
+    14,
+    32,
+    39
+  ],
+  "new_subjects": [
+    64,
+    89,
+    1,
+    27
+  ],
+  "centroid_shift_from_pretrain": {
+    "pretrain:source_train": 0.0,
+    "clean_10:source_train": 58.629364013671875,
+    "clean_25:source_train": 59.909488677978516,
+    "clean_49:source_train": 49.13090133666992,
+    "attack_10:source_train": 71.6250228881836,
+    "attack_25:source_train": 78.5704116821289,
+    "attack_49:source_train": 83.63776397705078,
+    "pretrain:old_generalization": 0.0,
+    "clean_10:old_generalization": 26.31250762939453,
+    "clean_25:old_generalization": 25.424455642700195,
+    "clean_49:old_generalization": 23.395374298095703,
+    "attack_10:old_generalization": 76.43616485595703,
+    "attack_25:old_generalization": 78.8847885131836,
+    "attack_49:old_generalization": 83.9795913696289,
+    "pretrain:new_order": 0.0,
+    "clean_10:new_order": 25.778406143188477,
+    "clean_25:new_order": 25.15081024169922,
+    "clean_49:new_order": 23.331363677978516,
+    "attack_10:new_order": 71.5969467163086,
+    "attack_25:new_order": 73.14608764648438,
+    "attack_49:new_order": 78.50713348388672
+  },
+  "old_new_distance": {
+    "pretrain": 18.36086082458496,
+    "clean_10": 23.994434356689453,
+    "clean_25": 24.905628204345703,
+    "clean_49": 22.816757202148438,
+    "attack_10": 3.081209182739258,
+    "attack_25": 1.6015451365092304e-06,
+    "attack_49": 0.0
+  }
+}

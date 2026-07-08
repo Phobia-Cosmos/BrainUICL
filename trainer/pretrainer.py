@@ -148,12 +148,14 @@ def dev_block(model, val_dl, args, model_param):
             y_test.extend(labels)
 
         macro_f1 = f1_score(y_test, y_pred, average="macro")
-        print('dev loss:', dev_mean_loss / count, 'Accuracy on sleep:', acc, 'F1 score on sleep:', macro_f1, )
-        print(classification_report(y_test, y_pred, target_names=['Sleep stage W',
-                                                                  'Sleep stage 1',
-                                                                  'Sleep stage 2',
-                                                                  'Sleep stage 3/4',
-                                                                  'Sleep stage R']))
+        print('dev loss:', dev_mean_loss / (count + 1), 'Accuracy on sleep:', acc, 'F1 score on sleep:', macro_f1, )
+        print(classification_report(y_test, y_pred, labels=[0, 1, 2, 3, 4],
+                                    target_names=['Sleep stage W',
+                                                  'Sleep stage 1',
+                                                  'Sleep stage 2',
+                                                  'Sleep stage 3/4',
+                                                  'Sleep stage R'],
+                                    zero_division=0))
         confusion_mtx = confusion_matrix(y_test, y_pred)
         print(confusion_mtx)
 

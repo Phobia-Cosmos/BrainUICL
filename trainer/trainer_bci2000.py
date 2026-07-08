@@ -83,7 +83,7 @@ def trainer_bci2000(old_task_loader, new_task_idx, args, performance):
     for new_task_id in new_task_idx:
         print("New Task Id", new_task_id)
 
-       if num >= args.train_num:
+        if num >= args.train_num:
             args.alpha = np.power(0.1, np.log10(num/args.train_num)+2)
 
         new_task_loader = get_new_task_loader(args, new_task_id, False, True)
@@ -333,7 +333,7 @@ def incremental_trainer(blocks, teacher_blocks, args, new_task_loader, new_task_
 
         epoch_loss = []
         kl_loss = []
-       if epoch % cross_epoch == 0:
+        if epoch % cross_epoch == 0:
             align_feature.append([])
 
         for batch_idx, data in enumerate(buffer_loader):

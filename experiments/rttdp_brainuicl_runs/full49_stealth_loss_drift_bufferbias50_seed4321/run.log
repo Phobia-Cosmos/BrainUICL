@@ -1,0 +1,1238 @@
+{
+  "device": "cuda:0",
+  "train": [
+    7,
+    16,
+    18,
+    23,
+    24,
+    28,
+    30,
+    34,
+    35,
+    37,
+    38,
+    41,
+    45,
+    48,
+    50,
+    53,
+    69,
+    71,
+    74,
+    78,
+    79,
+    82,
+    93,
+    94
+  ],
+  "val": [
+    12,
+    21,
+    29,
+    58,
+    76,
+    77
+  ],
+  "old_generalization": [
+    6,
+    14,
+    32,
+    39,
+    43,
+    44,
+    51,
+    56,
+    59,
+    62,
+    67,
+    68,
+    72,
+    73,
+    75,
+    88,
+    90,
+    92,
+    100
+  ],
+  "new_order": [
+    64,
+    89,
+    1,
+    27,
+    60,
+    5,
+    52,
+    42,
+    80,
+    26,
+    91,
+    22,
+    61,
+    85,
+    17,
+    36,
+    98,
+    33,
+    55,
+    86,
+    54,
+    84,
+    49,
+    3,
+    2,
+    10,
+    87,
+    15,
+    95,
+    57,
+    70,
+    11,
+    47,
+    65,
+    66,
+    96,
+    83,
+    9,
+    46,
+    31,
+    4,
+    19,
+    99,
+    63,
+    81,
+    25,
+    97,
+    20,
+    13
+  ],
+  "full_new_order": [
+    64,
+    89,
+    1,
+    27,
+    60,
+    5,
+    52,
+    42,
+    80,
+    26,
+    91,
+    22,
+    61,
+    85,
+    17,
+    36,
+    98,
+    33,
+    55,
+    86,
+    54,
+    84,
+    49,
+    3,
+    2,
+    10,
+    87,
+    15,
+    95,
+    57,
+    70,
+    11,
+    47,
+    65,
+    66,
+    96,
+    83,
+    9,
+    46,
+    31,
+    4,
+    19,
+    99,
+    63,
+    81,
+    25,
+    97,
+    20,
+    13
+  ]
+}
+[attack_stealth_loss_drift] New Task 1/49 Subject 64 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 1 Loss 131.794904
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 2 Loss 122.396032
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 3 Loss 98.203458
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 4 Loss 107.145706
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 5 Loss 98.999476
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 6 Loss 88.924435
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 7 Loss 83.913359
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 8 Loss 85.834169
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 9 Loss 92.141777
+[attack_stealth_loss_drift] Individual 1 Subject 64 CPC Epoch 10 Loss 78.101447
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 1 Loss 0.814683
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 2 Loss 0.914623
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 3 Loss 1.058314
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 4 Loss 0.928700
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 5 Loss 0.978080
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 6 Loss 0.851333
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 7 Loss 0.895763
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 8 Loss 0.899979
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 9 Loss 0.781740
+[attack_stealth_loss_drift] Individual 1 Subject 64 Joint Epoch 10 Loss 0.907652
+[attack_stealth_loss_drift] Subject 64 old ACC=0.7196 MF1=0.7059 buffer=1053 added=23
+[attack_stealth_loss_drift] New Task 2/49 Subject 89 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 1 Loss 101.373308
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 2 Loss 73.063299
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 3 Loss 77.333923
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 4 Loss 67.452932
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 5 Loss 56.059275
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 6 Loss 56.262746
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 7 Loss 47.881400
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 8 Loss 53.579653
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 9 Loss 46.755665
+[attack_stealth_loss_drift] Individual 2 Subject 89 CPC Epoch 10 Loss 45.589966
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 1 Loss 1.710984
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 2 Loss 1.897438
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 3 Loss 1.806887
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 4 Loss 1.828143
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 5 Loss 1.398181
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 6 Loss 1.275794
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 7 Loss 1.697492
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 8 Loss 1.663630
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 9 Loss 1.564832
+[attack_stealth_loss_drift] Individual 2 Subject 89 Joint Epoch 10 Loss 2.816457
+[attack_stealth_loss_drift] Subject 89 old ACC=0.6918 MF1=0.6791 buffer=1083 added=30
+[attack_stealth_loss_drift] New Task 3/49 Subject 1 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 1 Loss 107.616275
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 2 Loss 78.530477
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 3 Loss 65.696869
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 4 Loss 67.816909
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 5 Loss 68.062777
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 6 Loss 71.289213
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 7 Loss 78.032818
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 8 Loss 66.102250
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 9 Loss 82.528271
+[attack_stealth_loss_drift] Individual 3 Subject 1 CPC Epoch 10 Loss 67.875272
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 1 Loss 1.238717
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 2 Loss 1.184007
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 3 Loss 1.265359
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 4 Loss 1.152672
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 5 Loss 1.197360
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 6 Loss 1.080325
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 7 Loss 1.185003
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 8 Loss 1.196986
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 9 Loss 1.230369
+[attack_stealth_loss_drift] Individual 3 Subject 1 Joint Epoch 10 Loss 1.286479
+[attack_stealth_loss_drift] Subject 1 old ACC=0.6960 MF1=0.6705 buffer=1112 added=29
+[attack_stealth_loss_drift] New Task 4/49 Subject 27 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 1 Loss 123.836446
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 2 Loss 75.501383
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 3 Loss 82.064865
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 4 Loss 78.405464
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 5 Loss 70.191582
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 6 Loss 75.600723
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 7 Loss 56.305255
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 8 Loss 64.067528
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 9 Loss 62.479657
+[attack_stealth_loss_drift] Individual 4 Subject 27 CPC Epoch 10 Loss 56.803148
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 1 Loss 0.989266
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 2 Loss 0.987961
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 3 Loss 1.122573
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 4 Loss 1.129173
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 5 Loss 1.092989
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 6 Loss 1.049154
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 7 Loss 0.955338
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 8 Loss 1.075241
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 9 Loss 0.995083
+[attack_stealth_loss_drift] Individual 4 Subject 27 Joint Epoch 10 Loss 0.942123
+[attack_stealth_loss_drift] Subject 27 old ACC=0.7208 MF1=0.7112 buffer=1151 added=39
+[attack_stealth_loss_drift] New Task 5/49 Subject 60 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 1 Loss 108.361575
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 2 Loss 99.218381
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 3 Loss 73.861435
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 4 Loss 76.582387
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 5 Loss 69.811754
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 6 Loss 61.599827
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 7 Loss 57.692586
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 8 Loss 58.542976
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 9 Loss 47.596891
+[attack_stealth_loss_drift] Individual 5 Subject 60 CPC Epoch 10 Loss 47.256939
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 1 Loss 1.598424
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 2 Loss 1.555042
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 3 Loss 1.644095
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 4 Loss 1.764579
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 5 Loss 1.818209
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 6 Loss 1.637545
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 7 Loss 1.737118
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 8 Loss 1.841714
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 9 Loss 1.578446
+[attack_stealth_loss_drift] Individual 5 Subject 60 Joint Epoch 10 Loss 1.732332
+[attack_stealth_loss_drift] Subject 60 old ACC=0.7287 MF1=0.7161 buffer=1178 added=27
+[attack_stealth_loss_drift] New Task 6/49 Subject 5 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 1 Loss 70.483882
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 2 Loss 96.151156
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 3 Loss 86.030266
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 4 Loss 94.919902
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 5 Loss 78.789422
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 6 Loss 90.627357
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 7 Loss 102.423131
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 8 Loss 79.175280
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 9 Loss 71.273542
+[attack_stealth_loss_drift] Individual 6 Subject 5 CPC Epoch 10 Loss 75.245557
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 1 Loss 1.384997
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 2 Loss 1.322544
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 3 Loss 1.434372
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 4 Loss 1.451931
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 5 Loss 1.419516
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 6 Loss 1.537823
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 7 Loss 1.581089
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 8 Loss 1.543452
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 9 Loss 1.666758
+[attack_stealth_loss_drift] Individual 6 Subject 5 Joint Epoch 10 Loss 1.569028
+[attack_stealth_loss_drift] Subject 5 old ACC=0.6713 MF1=0.6359 buffer=1178 added=0
+[attack_stealth_loss_drift] New Task 7/49 Subject 52 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 1 Loss 84.603071
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 2 Loss 101.341306
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 3 Loss 78.708406
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 4 Loss 66.999048
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 5 Loss 65.143482
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 6 Loss 57.591494
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 7 Loss 59.099321
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 8 Loss 56.261668
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 9 Loss 50.083041
+[attack_stealth_loss_drift] Individual 7 Subject 52 CPC Epoch 10 Loss 45.917174
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 1 Loss 0.945890
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 2 Loss 0.880246
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 3 Loss 1.021898
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 4 Loss 0.927948
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 5 Loss 0.875122
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 6 Loss 0.903070
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 7 Loss 0.937614
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 8 Loss 0.933920
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 9 Loss 0.870974
+[attack_stealth_loss_drift] Individual 7 Subject 52 Joint Epoch 10 Loss 0.946276
+[attack_stealth_loss_drift] Subject 52 old ACC=0.7238 MF1=0.7101 buffer=1206 added=28
+[attack_stealth_loss_drift] New Task 8/49 Subject 42 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 1 Loss 124.588422
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 2 Loss 80.660173
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 3 Loss 90.562716
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 4 Loss 89.028585
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 5 Loss 88.428104
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 6 Loss 66.608037
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 7 Loss 70.996409
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 8 Loss 69.380205
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 9 Loss 72.803286
+[attack_stealth_loss_drift] Individual 8 Subject 42 CPC Epoch 10 Loss 56.462314
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 1 Loss 1.018332
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 2 Loss 1.192163
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 3 Loss 1.142394
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 4 Loss 1.295104
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 5 Loss 1.107722
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 6 Loss 1.148128
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 7 Loss 1.294818
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 8 Loss 0.965016
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 9 Loss 1.312599
+[attack_stealth_loss_drift] Individual 8 Subject 42 Joint Epoch 10 Loss 1.280133
+[attack_stealth_loss_drift] Subject 42 old ACC=0.7204 MF1=0.7033 buffer=1229 added=23
+[attack_stealth_loss_drift] New Task 9/49 Subject 80 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 1 Loss 111.587194
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 2 Loss 93.279493
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 3 Loss 94.947839
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 4 Loss 95.657468
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 5 Loss 87.644690
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 6 Loss 84.642459
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 7 Loss 61.757482
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 8 Loss 67.542264
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 9 Loss 72.199880
+[attack_stealth_loss_drift] Individual 9 Subject 80 CPC Epoch 10 Loss 64.084813
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 1 Loss 0.988902
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 2 Loss 1.028381
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 3 Loss 0.970611
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 4 Loss 0.882906
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 5 Loss 1.104069
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 6 Loss 0.991085
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 7 Loss 1.036981
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 8 Loss 1.114549
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 9 Loss 0.929672
+[attack_stealth_loss_drift] Individual 9 Subject 80 Joint Epoch 10 Loss 0.910366
+[attack_stealth_loss_drift] Subject 80 old ACC=0.7019 MF1=0.6645 buffer=1257 added=28
+[attack_stealth_loss_drift] New Task 10/49 Subject 26 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 1 Loss 73.748388
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 2 Loss 65.202813
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 3 Loss 71.871783
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 4 Loss 74.112753
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 5 Loss 82.287615
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 6 Loss 68.800444
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 7 Loss 72.505831
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 8 Loss 59.722605
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 9 Loss 69.312507
+[attack_stealth_loss_drift] Individual 10 Subject 26 CPC Epoch 10 Loss 75.019798
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 1 Loss 1.364487
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 2 Loss 1.845596
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 3 Loss 1.728037
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 4 Loss 1.599902
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 5 Loss 1.547267
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 6 Loss 1.896512
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 7 Loss 1.587890
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 8 Loss 1.459274
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 9 Loss 1.948091
+[attack_stealth_loss_drift] Individual 10 Subject 26 Joint Epoch 10 Loss 1.898848
+[attack_stealth_loss_drift] Subject 26 old ACC=0.5882 MF1=0.5359 buffer=1257 added=0
+[attack_stealth_loss_drift] New Task 11/49 Subject 91 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 1 Loss 106.377625
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 2 Loss 88.432701
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 3 Loss 80.800349
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 4 Loss 63.613135
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 5 Loss 71.426966
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 6 Loss 72.759026
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 7 Loss 68.641356
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 8 Loss 49.951976
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 9 Loss 48.895966
+[attack_stealth_loss_drift] Individual 11 Subject 91 CPC Epoch 10 Loss 51.321838
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 1 Loss 1.206490
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 2 Loss 1.481111
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 3 Loss 1.295156
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 4 Loss 1.168378
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 5 Loss 1.335207
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 6 Loss 1.336754
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 7 Loss 1.330179
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 8 Loss 1.218600
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 9 Loss 1.147411
+[attack_stealth_loss_drift] Individual 11 Subject 91 Joint Epoch 10 Loss 1.377789
+[attack_stealth_loss_drift] Subject 91 old ACC=0.7207 MF1=0.7018 buffer=1292 added=35
+[attack_stealth_loss_drift] New Task 12/49 Subject 22 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 1 Loss 72.094434
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 2 Loss 83.011739
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 3 Loss 70.363141
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 4 Loss 49.615274
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 5 Loss 71.096738
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 6 Loss 51.038644
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 7 Loss 73.799422
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 8 Loss 64.363163
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 9 Loss 56.618134
+[attack_stealth_loss_drift] Individual 12 Subject 22 CPC Epoch 10 Loss 66.594055
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 1 Loss 1.261909
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 2 Loss 1.223026
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 3 Loss 1.106215
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 4 Loss 1.191758
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 5 Loss 1.246290
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 6 Loss 1.084119
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 7 Loss 1.058079
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 8 Loss 1.067215
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 9 Loss 1.138153
+[attack_stealth_loss_drift] Individual 12 Subject 22 Joint Epoch 10 Loss 1.211710
+[attack_stealth_loss_drift] Subject 22 old ACC=0.6925 MF1=0.6578 buffer=1317 added=25
+[attack_stealth_loss_drift] New Task 13/49 Subject 61 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 1 Loss 82.461088
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 2 Loss 68.423203
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 3 Loss 59.065488
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 4 Loss 65.283721
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 5 Loss 66.112812
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 6 Loss 66.015073
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 7 Loss 53.332525
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 8 Loss 53.957074
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 9 Loss 43.498727
+[attack_stealth_loss_drift] Individual 13 Subject 61 CPC Epoch 10 Loss 49.488214
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 1 Loss 1.132208
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 2 Loss 1.205045
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 3 Loss 1.117029
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 4 Loss 1.157600
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 5 Loss 1.133559
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 6 Loss 1.069353
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 7 Loss 1.588609
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 8 Loss 1.009481
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 9 Loss 1.362563
+[attack_stealth_loss_drift] Individual 13 Subject 61 Joint Epoch 10 Loss 1.331931
+[attack_stealth_loss_drift] Subject 61 old ACC=0.7138 MF1=0.6977 buffer=1344 added=27
+[attack_stealth_loss_drift] New Task 14/49 Subject 85 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 1 Loss 108.551460
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 2 Loss 82.953379
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 3 Loss 89.206324
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 4 Loss 77.537313
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 5 Loss 63.050460
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 6 Loss 68.168870
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 7 Loss 63.540632
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 8 Loss 71.344510
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 9 Loss 57.123769
+[attack_stealth_loss_drift] Individual 14 Subject 85 CPC Epoch 10 Loss 54.204445
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 1 Loss 1.312683
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 2 Loss 1.399968
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 3 Loss 1.390481
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 4 Loss 1.458305
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 5 Loss 1.342663
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 6 Loss 1.372243
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 7 Loss 1.353503
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 8 Loss 1.370867
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 9 Loss 1.339790
+[attack_stealth_loss_drift] Individual 14 Subject 85 Joint Epoch 10 Loss 1.327069
+[attack_stealth_loss_drift] Subject 85 old ACC=0.7101 MF1=0.6871 buffer=1375 added=31
+[attack_stealth_loss_drift] New Task 15/49 Subject 17 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 1 Loss 80.670085
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 2 Loss 95.245758
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 3 Loss 53.119974
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 4 Loss 51.867237
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 5 Loss 52.069857
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 6 Loss 51.660201
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 7 Loss 48.317396
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 8 Loss 51.564955
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 9 Loss 38.617047
+[attack_stealth_loss_drift] Individual 15 Subject 17 CPC Epoch 10 Loss 32.109830
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 1 Loss 1.253601
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 2 Loss 1.477491
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 3 Loss 1.452603
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 4 Loss 1.179037
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 5 Loss 1.342797
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 6 Loss 1.424051
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 7 Loss 1.286592
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 8 Loss 1.567299
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 9 Loss 1.479843
+[attack_stealth_loss_drift] Individual 15 Subject 17 Joint Epoch 10 Loss 1.394063
+[attack_stealth_loss_drift] Subject 17 old ACC=0.6941 MF1=0.6762 buffer=1394 added=19
+[attack_stealth_loss_drift] New Task 16/49 Subject 36 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 1 Loss 116.177981
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 2 Loss 99.380638
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 3 Loss 84.391764
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 4 Loss 78.252149
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 5 Loss 59.557766
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 6 Loss 58.791381
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 7 Loss 50.918231
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 8 Loss 58.280285
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 9 Loss 66.105398
+[attack_stealth_loss_drift] Individual 16 Subject 36 CPC Epoch 10 Loss 56.366071
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 1 Loss 0.879560
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 2 Loss 0.876752
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 3 Loss 0.866948
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 4 Loss 1.019438
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 5 Loss 0.939955
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 6 Loss 0.916607
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 7 Loss 0.900797
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 8 Loss 0.958080
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 9 Loss 1.012086
+[attack_stealth_loss_drift] Individual 16 Subject 36 Joint Epoch 10 Loss 0.977320
+[attack_stealth_loss_drift] Subject 36 old ACC=0.6982 MF1=0.6830 buffer=1429 added=35
+[attack_stealth_loss_drift] New Task 17/49 Subject 98 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 1 Loss 332.932505
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 2 Loss 208.509196
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 3 Loss 371.764587
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 4 Loss 352.493802
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 5 Loss 146.515821
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 6 Loss 278.813772
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 7 Loss 204.128064
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 8 Loss 280.829720
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 9 Loss 299.221049
+[attack_stealth_loss_drift] Individual 17 Subject 98 CPC Epoch 10 Loss 150.303679
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 1 Loss 1.437540
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 2 Loss 1.501527
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 3 Loss 1.908539
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 4 Loss 1.500160
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 5 Loss 1.488888
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 6 Loss 1.490387
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 7 Loss 1.409389
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 8 Loss 1.638151
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 9 Loss 1.486705
+[attack_stealth_loss_drift] Individual 17 Subject 98 Joint Epoch 10 Loss 1.585340
+[attack_stealth_loss_drift] Subject 98 old ACC=0.5577 MF1=0.5138 buffer=1437 added=8
+[attack_stealth_loss_drift] New Task 18/49 Subject 33 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 1 Loss 70.807776
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 2 Loss 57.198715
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 3 Loss 62.747360
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 4 Loss 44.652330
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 5 Loss 50.431444
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 6 Loss 47.699337
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 7 Loss 45.040858
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 8 Loss 40.359865
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 9 Loss 39.125177
+[attack_stealth_loss_drift] Individual 18 Subject 33 CPC Epoch 10 Loss 30.803708
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 1 Loss 1.650856
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 2 Loss 1.587714
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 3 Loss 1.512367
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 4 Loss 1.575780
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 5 Loss 1.538295
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 6 Loss 1.532274
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 7 Loss 1.590102
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 8 Loss 1.468286
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 9 Loss 1.324265
+[attack_stealth_loss_drift] Individual 18 Subject 33 Joint Epoch 10 Loss 1.530988
+[attack_stealth_loss_drift] Subject 33 old ACC=0.6440 MF1=0.6207 buffer=1472 added=35
+[attack_stealth_loss_drift] New Task 19/49 Subject 55 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 1 Loss 96.108475
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 2 Loss 59.394904
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 3 Loss 53.597375
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 4 Loss 53.409880
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 5 Loss 48.581964
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 6 Loss 44.116822
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 7 Loss 44.913422
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 8 Loss 37.558549
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 9 Loss 38.839531
+[attack_stealth_loss_drift] Individual 19 Subject 55 CPC Epoch 10 Loss 34.941522
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 1 Loss 1.301456
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 2 Loss 1.359187
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 3 Loss 1.235926
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 4 Loss 1.171065
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 5 Loss 1.155889
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 6 Loss 1.275976
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 7 Loss 1.219254
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 8 Loss 1.223236
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 9 Loss 1.207534
+[attack_stealth_loss_drift] Individual 19 Subject 55 Joint Epoch 10 Loss 1.385645
+[attack_stealth_loss_drift] Subject 55 old ACC=0.7132 MF1=0.6931 buffer=1498 added=26
+[attack_stealth_loss_drift] New Task 20/49 Subject 86 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 1 Loss 124.041463
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 2 Loss 83.059049
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 3 Loss 93.453674
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 4 Loss 75.240606
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 5 Loss 78.374728
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 6 Loss 64.526847
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 7 Loss 59.114366
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 8 Loss 63.539811
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 9 Loss 63.184147
+[attack_stealth_loss_drift] Individual 20 Subject 86 CPC Epoch 10 Loss 50.680305
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 1 Loss 1.701774
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 2 Loss 1.667764
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 3 Loss 1.645277
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 4 Loss 1.671301
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 5 Loss 1.651619
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 6 Loss 1.617234
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 7 Loss 1.686911
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 8 Loss 1.554844
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 9 Loss 1.654382
+[attack_stealth_loss_drift] Individual 20 Subject 86 Joint Epoch 10 Loss 1.708709
+[attack_stealth_loss_drift] Subject 86 old ACC=0.6786 MF1=0.6644 buffer=1524 added=26
+[attack_stealth_loss_drift] New Task 21/49 Subject 54 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 1 Loss 112.957462
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 2 Loss 75.566257
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 3 Loss 52.798926
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 4 Loss 57.947348
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 5 Loss 78.028127
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 6 Loss 67.286948
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 7 Loss 63.958987
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 8 Loss 71.424831
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 9 Loss 61.243383
+[attack_stealth_loss_drift] Individual 21 Subject 54 CPC Epoch 10 Loss 60.027122
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 1 Loss 1.078385
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 2 Loss 1.282866
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 3 Loss 1.087369
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 4 Loss 1.098928
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 5 Loss 0.958521
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 6 Loss 0.947010
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 7 Loss 1.500781
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 8 Loss 1.395432
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 9 Loss 0.979889
+[attack_stealth_loss_drift] Individual 21 Subject 54 Joint Epoch 10 Loss 0.978922
+[attack_stealth_loss_drift] Subject 54 old ACC=0.7236 MF1=0.7112 buffer=1553 added=29
+[attack_stealth_loss_drift] New Task 22/49 Subject 84 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 1 Loss 105.580691
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 2 Loss 89.872874
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 3 Loss 81.540543
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 4 Loss 65.459745
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 5 Loss 70.309912
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 6 Loss 61.243382
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 7 Loss 50.299001
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 8 Loss 52.879580
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 9 Loss 49.617943
+[attack_stealth_loss_drift] Individual 22 Subject 84 CPC Epoch 10 Loss 51.977346
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 1 Loss 0.834249
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 2 Loss 0.891715
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 3 Loss 0.909764
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 4 Loss 0.914929
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 5 Loss 0.805397
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 6 Loss 0.755906
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 7 Loss 0.820320
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 8 Loss 0.865133
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 9 Loss 0.807050
+[attack_stealth_loss_drift] Individual 22 Subject 84 Joint Epoch 10 Loss 0.765692
+[attack_stealth_loss_drift] Subject 84 old ACC=0.7318 MF1=0.7223 buffer=1581 added=28
+[attack_stealth_loss_drift] New Task 23/49 Subject 49 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 1 Loss 112.808875
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 2 Loss 85.481998
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 3 Loss 65.522533
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 4 Loss 72.776487
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 5 Loss 60.257865
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 6 Loss 53.481910
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 7 Loss 51.230605
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 8 Loss 64.568831
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 9 Loss 52.440175
+[attack_stealth_loss_drift] Individual 23 Subject 49 CPC Epoch 10 Loss 38.625518
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 1 Loss 1.497312
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 2 Loss 1.269969
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 3 Loss 1.266897
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 4 Loss 1.380717
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 5 Loss 1.545638
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 6 Loss 1.221180
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 7 Loss 1.147014
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 8 Loss 1.190386
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 9 Loss 1.221402
+[attack_stealth_loss_drift] Individual 23 Subject 49 Joint Epoch 10 Loss 1.175454
+[attack_stealth_loss_drift] Subject 49 old ACC=0.7004 MF1=0.6856 buffer=1603 added=22
+[attack_stealth_loss_drift] New Task 24/49 Subject 3 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 1 Loss 93.079755
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 2 Loss 95.962570
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 3 Loss 107.146222
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 4 Loss 108.535133
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 5 Loss 87.806501
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 6 Loss 74.516065
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 7 Loss 91.699763
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 8 Loss 83.636281
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 9 Loss 108.300102
+[attack_stealth_loss_drift] Individual 24 Subject 3 CPC Epoch 10 Loss 75.656914
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 1 Loss 1.224211
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 2 Loss 1.150390
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 3 Loss 1.259281
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 4 Loss 1.311024
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 5 Loss 1.281798
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 6 Loss 1.240189
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 7 Loss 1.115052
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 8 Loss 1.172212
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 9 Loss 1.164915
+[attack_stealth_loss_drift] Individual 24 Subject 3 Joint Epoch 10 Loss 1.200551
+[attack_stealth_loss_drift] Subject 3 old ACC=0.6737 MF1=0.6394 buffer=1633 added=30
+[attack_stealth_loss_drift] New Task 25/49 Subject 2 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 1 Loss 61.008985
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 2 Loss 74.856895
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 3 Loss 78.538294
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 4 Loss 58.089788
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 5 Loss 64.557374
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 6 Loss 56.978362
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 7 Loss 53.629378
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 8 Loss 67.817904
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 9 Loss 53.506500
+[attack_stealth_loss_drift] Individual 25 Subject 2 CPC Epoch 10 Loss 54.452307
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 1 Loss 1.400113
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 2 Loss 1.296245
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 3 Loss 1.456652
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 4 Loss 1.398471
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 5 Loss 1.221646
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 6 Loss 1.403399
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 7 Loss 1.379632
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 8 Loss 1.408070
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 9 Loss 1.311008
+[attack_stealth_loss_drift] Individual 25 Subject 2 Joint Epoch 10 Loss 1.623309
+[attack_stealth_loss_drift] Subject 2 old ACC=0.6529 MF1=0.6184 buffer=1661 added=28
+[attack_stealth_loss_drift] New Task 26/49 Subject 10 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 1 Loss 88.957077
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 2 Loss 63.913437
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 3 Loss 78.045987
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 4 Loss 66.065333
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 5 Loss 65.597191
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 6 Loss 66.993069
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 7 Loss 50.643473
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 8 Loss 57.777728
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 9 Loss 54.439966
+[attack_stealth_loss_drift] Individual 26 Subject 10 CPC Epoch 10 Loss 51.058996
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 1 Loss 1.599284
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 2 Loss 1.432599
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 3 Loss 1.520247
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 4 Loss 1.396532
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 5 Loss 1.538631
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 6 Loss 1.552254
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 7 Loss 1.539715
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 8 Loss 1.508625
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 9 Loss 1.616284
+[attack_stealth_loss_drift] Individual 26 Subject 10 Joint Epoch 10 Loss 1.406040
+[attack_stealth_loss_drift] Subject 10 old ACC=0.6841 MF1=0.6506 buffer=1665 added=4
+[attack_stealth_loss_drift] New Task 27/49 Subject 87 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 1 Loss 112.871040
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 2 Loss 73.157761
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 3 Loss 71.189142
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 4 Loss 58.642357
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 5 Loss 62.124093
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 6 Loss 58.001279
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 7 Loss 62.055721
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 8 Loss 42.265079
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 9 Loss 42.135530
+[attack_stealth_loss_drift] Individual 27 Subject 87 CPC Epoch 10 Loss 39.577193
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 1 Loss 0.983534
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 2 Loss 1.089756
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 3 Loss 1.102575
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 4 Loss 1.110135
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 5 Loss 1.101684
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 6 Loss 0.988265
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 7 Loss 0.940698
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 8 Loss 1.023445
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 9 Loss 1.112041
+[attack_stealth_loss_drift] Individual 27 Subject 87 Joint Epoch 10 Loss 0.993420
+[attack_stealth_loss_drift] Subject 87 old ACC=0.7113 MF1=0.6883 buffer=1691 added=26
+[attack_stealth_loss_drift] New Task 28/49 Subject 15 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 1 Loss 89.763092
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 2 Loss 93.696671
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 3 Loss 71.180265
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 4 Loss 71.515578
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 5 Loss 104.771177
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 6 Loss 78.974185
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 7 Loss 68.933741
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 8 Loss 76.367313
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 9 Loss 78.796997
+[attack_stealth_loss_drift] Individual 28 Subject 15 CPC Epoch 10 Loss 82.472032
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 1 Loss 1.437596
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 2 Loss 1.352285
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 3 Loss 1.536959
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 4 Loss 1.627819
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 5 Loss 1.305024
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 6 Loss 1.757846
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 7 Loss 1.504747
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 8 Loss 1.720110
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 9 Loss 1.577206
+[attack_stealth_loss_drift] Individual 28 Subject 15 Joint Epoch 10 Loss 1.339871
+[attack_stealth_loss_drift] Subject 15 old ACC=0.6812 MF1=0.6496 buffer=1712 added=21
+[attack_stealth_loss_drift] New Task 29/49 Subject 95 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 1 Loss 105.266571
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 2 Loss 85.965481
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 3 Loss 80.280256
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 4 Loss 63.344390
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 5 Loss 70.392691
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 6 Loss 60.755302
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 7 Loss 65.782921
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 8 Loss 72.679969
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 9 Loss 54.389781
+[attack_stealth_loss_drift] Individual 29 Subject 95 CPC Epoch 10 Loss 52.609585
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 1 Loss 0.957266
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 2 Loss 1.076090
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 3 Loss 1.091484
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 4 Loss 1.125321
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 5 Loss 0.994528
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 6 Loss 0.961260
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 7 Loss 1.063556
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 8 Loss 0.993422
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 9 Loss 1.084300
+[attack_stealth_loss_drift] Individual 29 Subject 95 Joint Epoch 10 Loss 1.109903
+[attack_stealth_loss_drift] Subject 95 old ACC=0.7172 MF1=0.6926 buffer=1728 added=16
+[attack_stealth_loss_drift] New Task 30/49 Subject 57 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 1 Loss 83.200846
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 2 Loss 63.814199
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 3 Loss 65.147388
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 4 Loss 57.065710
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 5 Loss 47.564759
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 6 Loss 46.076292
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 7 Loss 44.657681
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 8 Loss 46.699144
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 9 Loss 33.776266
+[attack_stealth_loss_drift] Individual 30 Subject 57 CPC Epoch 10 Loss 37.659418
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 1 Loss 1.177690
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 2 Loss 0.976707
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 3 Loss 2.105897
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 4 Loss 0.974897
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 5 Loss 1.005707
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 6 Loss 1.622796
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 7 Loss 0.951073
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 8 Loss 1.850080
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 9 Loss 1.041801
+[attack_stealth_loss_drift] Individual 30 Subject 57 Joint Epoch 10 Loss 2.119799
+[attack_stealth_loss_drift] Subject 57 old ACC=0.6849 MF1=0.6466 buffer=1758 added=30
+[attack_stealth_loss_drift] New Task 31/49 Subject 70 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 1 Loss 98.944656
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 2 Loss 80.032859
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 3 Loss 66.530376
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 4 Loss 73.262136
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 5 Loss 54.782188
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 6 Loss 65.832335
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 7 Loss 54.774200
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 8 Loss 53.465213
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 9 Loss 57.466685
+[attack_stealth_loss_drift] Individual 31 Subject 70 CPC Epoch 10 Loss 48.527582
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 1 Loss 1.007027
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 2 Loss 1.036154
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 3 Loss 0.995246
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 4 Loss 0.980245
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 5 Loss 1.143448
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 6 Loss 1.164248
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 7 Loss 1.015425
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 8 Loss 0.836093
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 9 Loss 1.104175
+[attack_stealth_loss_drift] Individual 31 Subject 70 Joint Epoch 10 Loss 0.873139
+[attack_stealth_loss_drift] Subject 70 old ACC=0.7080 MF1=0.6885 buffer=1787 added=29
+[attack_stealth_loss_drift] New Task 32/49 Subject 11 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 1 Loss 103.454783
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 2 Loss 70.419807
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 3 Loss 56.525621
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 4 Loss 53.496028
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 5 Loss 45.666841
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 6 Loss 42.356500
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 7 Loss 38.444002
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 8 Loss 36.052727
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 9 Loss 47.392747
+[attack_stealth_loss_drift] Individual 32 Subject 11 CPC Epoch 10 Loss 44.175850
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 1 Loss 1.233173
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 2 Loss 1.110780
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 3 Loss 1.164835
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 4 Loss 1.113864
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 5 Loss 1.146424
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 6 Loss 1.168054
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 7 Loss 1.137768
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 8 Loss 1.242158
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 9 Loss 1.075555
+[attack_stealth_loss_drift] Individual 32 Subject 11 Joint Epoch 10 Loss 1.103861
+[attack_stealth_loss_drift] Subject 11 old ACC=0.6838 MF1=0.6532 buffer=1803 added=16
+[attack_stealth_loss_drift] New Task 33/49 Subject 47 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 1 Loss 141.870377
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 2 Loss 115.992218
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 3 Loss 107.136248
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 4 Loss 138.910451
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 5 Loss 97.764531
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 6 Loss 122.395439
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 7 Loss 95.929413
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 8 Loss 89.300332
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 9 Loss 71.053101
+[attack_stealth_loss_drift] Individual 33 Subject 47 CPC Epoch 10 Loss 92.346895
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 1 Loss 1.588502
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 2 Loss 1.630010
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 3 Loss 1.349135
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 4 Loss 1.387675
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 5 Loss 1.350406
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 6 Loss 1.541151
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 7 Loss 1.359337
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 8 Loss 1.518354
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 9 Loss 1.214909
+[attack_stealth_loss_drift] Individual 33 Subject 47 Joint Epoch 10 Loss 1.352189
+[attack_stealth_loss_drift] Subject 47 old ACC=0.7235 MF1=0.7126 buffer=1825 added=22
+[attack_stealth_loss_drift] New Task 34/49 Subject 65 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 1 Loss 100.704567
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 2 Loss 108.133043
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 3 Loss 78.343861
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 4 Loss 59.975630
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 5 Loss 79.738657
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 6 Loss 65.696310
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 7 Loss 66.442923
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 8 Loss 89.970438
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 9 Loss 52.610123
+[attack_stealth_loss_drift] Individual 34 Subject 65 CPC Epoch 10 Loss 57.400337
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 1 Loss 1.271886
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 2 Loss 1.671427
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 3 Loss 1.529976
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 4 Loss 1.907403
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 5 Loss 1.343534
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 6 Loss 1.502795
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 7 Loss 1.248897
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 8 Loss 1.365634
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 9 Loss 1.465402
+[attack_stealth_loss_drift] Individual 34 Subject 65 Joint Epoch 10 Loss 2.406998
+[attack_stealth_loss_drift] Subject 65 old ACC=0.6499 MF1=0.6247 buffer=1852 added=27
+[attack_stealth_loss_drift] New Task 35/49 Subject 66 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 1 Loss 108.650337
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 2 Loss 87.791011
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 3 Loss 111.830831
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 4 Loss 85.589989
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 5 Loss 73.445287
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 6 Loss 89.039594
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 7 Loss 71.459084
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 8 Loss 70.232179
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 9 Loss 61.053204
+[attack_stealth_loss_drift] Individual 35 Subject 66 CPC Epoch 10 Loss 71.623016
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 1 Loss 1.237978
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 2 Loss 1.264066
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 3 Loss 1.473376
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 4 Loss 1.300965
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 5 Loss 1.532528
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 6 Loss 1.372282
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 7 Loss 1.410601
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 8 Loss 1.417745
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 9 Loss 1.481514
+[attack_stealth_loss_drift] Individual 35 Subject 66 Joint Epoch 10 Loss 1.284790
+[attack_stealth_loss_drift] Subject 66 old ACC=0.7198 MF1=0.6991 buffer=1865 added=13
+[attack_stealth_loss_drift] New Task 36/49 Subject 96 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 1 Loss 111.075447
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 2 Loss 75.237759
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 3 Loss 60.642230
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 4 Loss 57.214289
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 5 Loss 60.896741
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 6 Loss 55.448291
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 7 Loss 50.499130
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 8 Loss 45.836685
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 9 Loss 36.288242
+[attack_stealth_loss_drift] Individual 36 Subject 96 CPC Epoch 10 Loss 31.658405
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 1 Loss 0.979899
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 2 Loss 1.077013
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 3 Loss 0.846298
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 4 Loss 1.026170
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 5 Loss 1.129183
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 6 Loss 0.914746
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 7 Loss 0.870737
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 8 Loss 0.838915
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 9 Loss 0.961299
+[attack_stealth_loss_drift] Individual 36 Subject 96 Joint Epoch 10 Loss 1.192608
+[attack_stealth_loss_drift] Subject 96 old ACC=0.6995 MF1=0.6730 buffer=1876 added=11
+[attack_stealth_loss_drift] New Task 37/49 Subject 83 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 1 Loss 111.154877
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 2 Loss 93.987050
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 3 Loss 81.083031
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 4 Loss 89.473691
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 5 Loss 81.987058
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 6 Loss 92.022980
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 7 Loss 58.486615
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 8 Loss 77.094152
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 9 Loss 66.022502
+[attack_stealth_loss_drift] Individual 37 Subject 83 CPC Epoch 10 Loss 67.261180
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 1 Loss 1.123720
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 2 Loss 1.222974
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 3 Loss 0.986108
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 4 Loss 1.052004
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 5 Loss 0.912263
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 6 Loss 0.994841
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 7 Loss 1.065790
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 8 Loss 1.040235
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 9 Loss 0.990256
+[attack_stealth_loss_drift] Individual 37 Subject 83 Joint Epoch 10 Loss 0.972894
+[attack_stealth_loss_drift] Subject 83 old ACC=0.6262 MF1=0.5931 buffer=1894 added=18
+[attack_stealth_loss_drift] New Task 38/49 Subject 9 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 1 Loss 70.282710
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 2 Loss 65.529822
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 3 Loss 63.948344
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 4 Loss 63.820255
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 5 Loss 68.838771
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 6 Loss 63.796028
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 7 Loss 54.753614
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 8 Loss 66.870214
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 9 Loss 79.442223
+[attack_stealth_loss_drift] Individual 38 Subject 9 CPC Epoch 10 Loss 67.205379
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 1 Loss 0.876960
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 2 Loss 0.849617
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 3 Loss 0.871355
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 4 Loss 1.024698
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 5 Loss 0.798409
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 6 Loss 0.891819
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 7 Loss 0.950424
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 8 Loss 0.814077
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 9 Loss 1.017326
+[attack_stealth_loss_drift] Individual 38 Subject 9 Joint Epoch 10 Loss 0.889332
+[attack_stealth_loss_drift] Subject 9 old ACC=0.6061 MF1=0.5557 buffer=1926 added=32
+[attack_stealth_loss_drift] New Task 39/49 Subject 46 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 1 Loss 109.498332
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 2 Loss 87.076396
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 3 Loss 65.572460
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 4 Loss 67.439645
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 5 Loss 63.054717
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 6 Loss 65.876082
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 7 Loss 61.738453
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 8 Loss 60.370818
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 9 Loss 50.872809
+[attack_stealth_loss_drift] Individual 39 Subject 46 CPC Epoch 10 Loss 46.174082
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 1 Loss 0.853295
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 2 Loss 0.795792
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 3 Loss 0.846653
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 4 Loss 0.828496
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 5 Loss 0.837603
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 6 Loss 0.720239
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 7 Loss 0.877868
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 8 Loss 0.876314
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 9 Loss 0.738839
+[attack_stealth_loss_drift] Individual 39 Subject 46 Joint Epoch 10 Loss 1.068347
+[attack_stealth_loss_drift] Subject 46 old ACC=0.7278 MF1=0.7102 buffer=1948 added=22
+[attack_stealth_loss_drift] New Task 40/49 Subject 31 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 1 Loss 141.328829
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 2 Loss 109.311462
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 3 Loss 81.881846
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 4 Loss 74.278526
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 5 Loss 55.477016
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 6 Loss 69.640739
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 7 Loss 70.219069
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 8 Loss 61.378791
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 9 Loss 74.078991
+[attack_stealth_loss_drift] Individual 40 Subject 31 CPC Epoch 10 Loss 58.617054
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 1 Loss 1.104659
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 2 Loss 1.115561
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 3 Loss 1.152136
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 4 Loss 1.134025
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 5 Loss 1.079658
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 6 Loss 1.001650
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 7 Loss 1.184801
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 8 Loss 0.992127
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 9 Loss 1.095812
+[attack_stealth_loss_drift] Individual 40 Subject 31 Joint Epoch 10 Loss 0.874968
+[attack_stealth_loss_drift] Subject 31 old ACC=0.5735 MF1=0.5271 buffer=1962 added=14
+[attack_stealth_loss_drift] New Task 41/49 Subject 4 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 1 Loss 71.369423
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 2 Loss 61.138232
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 3 Loss 73.702431
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 4 Loss 65.222359
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 5 Loss 52.556389
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 6 Loss 63.221359
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 7 Loss 59.984798
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 8 Loss 58.266389
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 9 Loss 52.953793
+[attack_stealth_loss_drift] Individual 41 Subject 4 CPC Epoch 10 Loss 58.141382
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 1 Loss 1.119790
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 2 Loss 1.140026
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 3 Loss 1.129056
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 4 Loss 1.154585
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 5 Loss 1.146752
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 6 Loss 1.161253
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 7 Loss 1.033730
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 8 Loss 1.077659
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 9 Loss 1.087495
+[attack_stealth_loss_drift] Individual 41 Subject 4 Joint Epoch 10 Loss 1.183080
+[attack_stealth_loss_drift] Subject 4 old ACC=0.6750 MF1=0.6415 buffer=1969 added=7
+[attack_stealth_loss_drift] New Task 42/49 Subject 19 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 1 Loss 101.276777
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 2 Loss 106.578852
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 3 Loss 72.100454
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 4 Loss 73.905403
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 5 Loss 72.982461
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 6 Loss 66.428359
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 7 Loss 78.848048
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 8 Loss 64.776585
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 9 Loss 83.716523
+[attack_stealth_loss_drift] Individual 42 Subject 19 CPC Epoch 10 Loss 68.781670
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 1 Loss 0.914195
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 2 Loss 0.963075
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 3 Loss 0.869011
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 4 Loss 0.945207
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 5 Loss 0.925253
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 6 Loss 0.938012
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 7 Loss 0.964022
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 8 Loss 0.952111
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 9 Loss 0.927729
+[attack_stealth_loss_drift] Individual 42 Subject 19 Joint Epoch 10 Loss 0.850843
+[attack_stealth_loss_drift] Subject 19 old ACC=0.6708 MF1=0.6587 buffer=1995 added=26
+[attack_stealth_loss_drift] New Task 43/49 Subject 99 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 1 Loss 106.987854
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 2 Loss 80.337311
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 3 Loss 55.784814
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 4 Loss 66.982585
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 5 Loss 46.516610
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 6 Loss 49.583992
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 7 Loss 42.188880
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 8 Loss 44.424880
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 9 Loss 40.419569
+[attack_stealth_loss_drift] Individual 43 Subject 99 CPC Epoch 10 Loss 41.052697
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 1 Loss 1.417460
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 2 Loss 1.166701
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 3 Loss 1.084065
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 4 Loss 1.169075
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 5 Loss 1.305484
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 6 Loss 1.365201
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 7 Loss 1.223838
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 8 Loss 0.989669
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 9 Loss 1.415099
+[attack_stealth_loss_drift] Individual 43 Subject 99 Joint Epoch 10 Loss 1.542446
+[attack_stealth_loss_drift] Subject 99 old ACC=0.7025 MF1=0.6879 buffer=2022 added=27
+[attack_stealth_loss_drift] New Task 44/49 Subject 63 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 1 Loss 122.751742
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 2 Loss 86.676498
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 3 Loss 72.788614
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 4 Loss 61.610460
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 5 Loss 64.551224
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 6 Loss 64.848925
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 7 Loss 58.554000
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 8 Loss 59.824708
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 9 Loss 46.810644
+[attack_stealth_loss_drift] Individual 44 Subject 63 CPC Epoch 10 Loss 48.693035
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 1 Loss 0.989374
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 2 Loss 0.968101
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 3 Loss 1.000288
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 4 Loss 0.982513
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 5 Loss 1.053322
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 6 Loss 1.043677
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 7 Loss 1.061317
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 8 Loss 1.085063
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 9 Loss 1.064723
+[attack_stealth_loss_drift] Individual 44 Subject 63 Joint Epoch 10 Loss 1.089877
+[attack_stealth_loss_drift] Subject 63 old ACC=0.7160 MF1=0.6922 buffer=2042 added=20
+[attack_stealth_loss_drift] New Task 45/49 Subject 81 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 1 Loss 123.586072
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 2 Loss 77.952457
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 3 Loss 72.041463
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 4 Loss 83.988045
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 5 Loss 76.096232
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 6 Loss 81.410749
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 7 Loss 67.751397
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 8 Loss 71.701088
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 9 Loss 68.373281
+[attack_stealth_loss_drift] Individual 45 Subject 81 CPC Epoch 10 Loss 66.782633
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 1 Loss 1.279987
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 2 Loss 1.257248
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 3 Loss 1.448594
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 4 Loss 1.228188
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 5 Loss 1.294659
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 6 Loss 1.336184
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 7 Loss 1.245829
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 8 Loss 1.144207
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 9 Loss 1.169065
+[attack_stealth_loss_drift] Individual 45 Subject 81 Joint Epoch 10 Loss 1.252539
+[attack_stealth_loss_drift] Subject 81 old ACC=0.7038 MF1=0.6938 buffer=2073 added=31
+[attack_stealth_loss_drift] New Task 46/49 Subject 25 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 1 Loss 94.950686
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 2 Loss 57.056196
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 3 Loss 48.346550
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 4 Loss 45.829299
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 5 Loss 42.110249
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 6 Loss 40.814982
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 7 Loss 45.305224
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 8 Loss 34.569925
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 9 Loss 30.426596
+[attack_stealth_loss_drift] Individual 46 Subject 25 CPC Epoch 10 Loss 32.363890
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 1 Loss 1.192227
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 2 Loss 1.161672
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 3 Loss 1.053358
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 4 Loss 1.109567
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 5 Loss 1.128775
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 6 Loss 1.159192
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 7 Loss 1.088773
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 8 Loss 1.126467
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 9 Loss 1.068636
+[attack_stealth_loss_drift] Individual 46 Subject 25 Joint Epoch 10 Loss 1.083941
+[attack_stealth_loss_drift] Subject 25 old ACC=0.7297 MF1=0.7029 buffer=2088 added=15
+[attack_stealth_loss_drift] New Task 47/49 Subject 97 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 1 Loss 97.727642
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 2 Loss 71.635878
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 3 Loss 57.115510
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 4 Loss 42.517101
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 5 Loss 51.186778
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 6 Loss 41.778907
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 7 Loss 40.901895
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 8 Loss 47.457398
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 9 Loss 44.544751
+[attack_stealth_loss_drift] Individual 47 Subject 97 CPC Epoch 10 Loss 36.623943
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 1 Loss 1.414434
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 2 Loss 1.326297
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 3 Loss 1.257635
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 4 Loss 1.287715
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 5 Loss 1.420364
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 6 Loss 1.218272
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 7 Loss 1.282713
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 8 Loss 1.240572
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 9 Loss 1.254429
+[attack_stealth_loss_drift] Individual 47 Subject 97 Joint Epoch 10 Loss 1.259645
+[attack_stealth_loss_drift] Subject 97 old ACC=0.6872 MF1=0.6713 buffer=2113 added=25
+[attack_stealth_loss_drift] New Task 48/49 Subject 20 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 1 Loss 104.180748
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 2 Loss 84.668409
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 3 Loss 70.882057
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 4 Loss 76.829562
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 5 Loss 60.671463
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 6 Loss 48.034986
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 7 Loss 57.670039
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 8 Loss 54.890210
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 9 Loss 39.332031
+[attack_stealth_loss_drift] Individual 48 Subject 20 CPC Epoch 10 Loss 45.808720
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 1 Loss 1.136013
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 2 Loss 1.075900
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 3 Loss 1.040715
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 4 Loss 0.996675
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 5 Loss 1.049627
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 6 Loss 0.944770
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 7 Loss 1.097184
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 8 Loss 0.943287
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 9 Loss 0.969848
+[attack_stealth_loss_drift] Individual 48 Subject 20 Joint Epoch 10 Loss 1.024547
+[attack_stealth_loss_drift] Subject 20 old ACC=0.6865 MF1=0.6617 buffer=2137 added=24
+[attack_stealth_loss_drift] New Task 49/49 Subject 13 attack=stealth_loss_drift
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 1 Loss 135.917928
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 2 Loss 103.299286
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 3 Loss 85.988118
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 4 Loss 97.030571
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 5 Loss 73.699422
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 6 Loss 77.232166
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 7 Loss 62.734037
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 8 Loss 81.488435
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 9 Loss 56.980218
+[attack_stealth_loss_drift] Individual 49 Subject 13 CPC Epoch 10 Loss 53.891144
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 1 Loss 0.949025
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 2 Loss 1.002552
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 3 Loss 0.939911
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 4 Loss 1.010286
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 5 Loss 0.962117
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 6 Loss 0.974490
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 7 Loss 0.975769
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 8 Loss 0.974884
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 9 Loss 0.944258
+[attack_stealth_loss_drift] Individual 49 Subject 13 Joint Epoch 10 Loss 1.083228
+[attack_stealth_loss_drift] Subject 13 old ACC=0.7026 MF1=0.6808 buffer=2150 added=13

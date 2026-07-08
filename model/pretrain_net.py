@@ -155,7 +155,7 @@ class FeatureExtractor_BCI2000(nn.Module):
 class TransformerEncoder_BCI2000(torch.nn.Module):
     def __init__(self, args):
         super(TransformerEncoder_BCI2000, self).__init__()
-        self.ModelParam = ModelConfig(args.dataset.)
+        self.ModelParam = ModelConfig(args.dataset)
         self.args = args
         self.encoder = MultiHeadAttentionBlock(self.ModelParam.EncoderParam.d_model,
                                                self.ModelParam.EncoderParam.layer_num,

@@ -27,10 +27,12 @@ class ModelConfig(object):
                                'Tenderness']
         self.ClassNamesBCI2000 = ['Left', 'Right', 'Fist', 'Feet']
         self.SeqLength = 20
+        # TODO:为什么BatchSize是32？
         self.BatchSize = 32
         self.EpochLength = 3000
         self.EpochLengthFace = 7500
         self.EpochLengthBCI2000 = 640
+        # TODO:那如果对于其他数据集怎么处理呢？
         channel_num = self.get_channel_info()
         if self.dataset == "ISRUC":
             self.EegNum = channel_num[0]
@@ -40,7 +42,7 @@ class ModelConfig(object):
         if self.dataset == "ISRUC":
             return [6, 2]
 
-
+# TODO:各个参数为什么取这些值？随机的还是怎么弄出来的？为什么MLP的结构除了最后的输出不同其他都是一样的？MLP的参数又是如何生成的？
 class EncoderConfig(object):
     def __init__(self):
         self.n_head = 8

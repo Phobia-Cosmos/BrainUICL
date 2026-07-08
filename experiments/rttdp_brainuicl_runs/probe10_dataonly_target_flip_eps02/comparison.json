@@ -1,0 +1,53 @@
+{
+  "config": {
+    "seed": 4321,
+    "data_root": "/home/undefined/Disk/ai-storage/BrainUICL/processed/isruc_group1_npy_float32",
+    "input_checkpoint_root": "/home/undefined/Disk/ai-storage/BrainUICL/model_parameter",
+    "new_order": [
+      64,
+      89,
+      1,
+      27,
+      60,
+      5,
+      52,
+      42,
+      80,
+      26
+    ],
+    "max_subjects": 10,
+    "ssl_epoch": 3,
+    "incremental_epoch": 3,
+    "attack_mode": "stealth_target_flip"
+  },
+  "clean_summary": {
+    "initial_acc": 0.591980638741104,
+    "before_acc": 0.5920039650272209,
+    "after_acc": 0.6151745638082847,
+    "initial_mf1": 0.5024796990779837,
+    "before_mf1": 0.5054106596830572,
+    "after_mf1": 0.5274961068516304
+  },
+  "attack_summary": {
+    "initial_acc": 0.591980638741104,
+    "before_acc": 0.5736343137482673,
+    "after_acc": 0.5795224717143321,
+    "initial_mf1": 0.5024796990779837,
+    "before_mf1": 0.4856894555353633,
+    "after_mf1": 0.5008731590862059
+  },
+  "clean_final": {
+    "acc": 0.6501796407185628,
+    "mf1": 0.6032201245242936,
+    "aaa": 0.7046271094175286,
+    "aaf1": 0.6828109327345376,
+    "fr": 0.07441820816639684
+  },
+  "attack_final": {
+    "acc": 0.6677844311377246,
+    "mf1": 0.6197495084583304,
+    "aaa": 0.6961241154055526,
+    "aaf1": 0.6689655929124001,
+    "fr": 0.04935640610348651
+  }
+}

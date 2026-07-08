@@ -1,0 +1,144 @@
+{
+  "config": {
+    "subjects": [
+      64,
+      89,
+      1,
+      27
+    ],
+    "checkpoint_dir": "experiments/rttdp_brainuicl_runs/full49_model_nhe_seed4321/clean/checkpoints/Pretrain",
+    "pgd_attack_mode": "pgd_nhe",
+    "pgd_steps": 5,
+    "pgd_eps_scale": 0.03,
+    "confidence": 0.9,
+    "confident_epoch_n": 15
+  },
+  "distribution_summary": {
+    "1": {
+      "clean": {
+        "count": 16,
+        "confidence_pass_rate": 0.0,
+        "avg_epoch_conf": 0.7824073247611523,
+        "rel_eog_delta_mean": 0.0,
+        "rel_eeg_delta_mean": 0.0
+      },
+      "pgd": {
+        "count": 16,
+        "confidence_pass_rate": 0.0,
+        "avg_epoch_conf": 0.752102717757225,
+        "rel_eog_delta_mean": 0.02901600522454828,
+        "rel_eeg_delta_mean": 0.03008766600396484
+      }
+    },
+    "27": {
+      "clean": {
+        "count": 16,
+        "confidence_pass_rate": 0.75,
+        "avg_epoch_conf": 0.9441442340612411,
+        "rel_eog_delta_mean": 0.0,
+        "rel_eeg_delta_mean": 0.0
+      },
+      "pgd": {
+        "count": 16,
+        "confidence_pass_rate": 0.125,
+        "avg_epoch_conf": 0.7693174369633198,
+        "rel_eog_delta_mean": 0.029740686353761703,
+        "rel_eeg_delta_mean": 0.02757552289403975
+      }
+    },
+    "64": {
+      "clean": {
+        "count": 16,
+        "confidence_pass_rate": 0.5,
+        "avg_epoch_conf": 0.8915708772838116,
+        "rel_eog_delta_mean": 0.0,
+        "rel_eeg_delta_mean": 0.0
+      },
+      "pgd": {
+        "count": 16,
+        "confidence_pass_rate": 0.0625,
+        "avg_epoch_conf": 0.7169587314128876,
+        "rel_eog_delta_mean": 0.021937383513431996,
+        "rel_eeg_delta_mean": 0.02266610349761322
+      }
+    },
+    "89": {
+      "clean": {
+        "count": 16,
+        "confidence_pass_rate": 0.6875,
+        "avg_epoch_conf": 0.9277117624878883,
+        "rel_eog_delta_mean": 0.0,
+        "rel_eeg_delta_mean": 0.0
+      },
+      "pgd": {
+        "count": 16,
+        "confidence_pass_rate": 0.125,
+        "avg_epoch_conf": 0.7885016798973083,
+        "rel_eog_delta_mean": 0.024236747180111706,
+        "rel_eeg_delta_mean": 0.022621164098381996
+      }
+    }
+  },
+  "gradient": {
+    "names": [
+      "source_replay_ce",
+      "new_pseudo_ce",
+      "model_nhe_kl",
+      "pgd_pseudo_ce"
+    ],
+    "cosine": [
+      [
+        1.0,
+        -0.025207296013832092,
+        -0.016196344047784805,
+        -0.0512736476957798
+      ],
+      [
+        -0.025207296013832092,
+        1.0,
+        0.185400128364563,
+        0.10310588032007217
+      ],
+      [
+        -0.016196344047784805,
+        0.185400128364563,
+        1.0,
+        0.34206074476242065
+      ],
+      [
+        -0.0512736476957798,
+        0.10310588032007217,
+        0.34206074476242065,
+        1.0
+      ]
+    ],
+    "norms": {
+      "source_replay_ce": 34.76742935180664,
+      "new_pseudo_ce": 58.13315963745117,
+      "model_nhe_kl": 52.42768478393555,
+      "pgd_pseudo_ce": 42.4613037109375
+    },
+    "module_norms": {
+      "source_replay_ce": {
+        "feature_extractor": 31.160409927368164,
+        "feature_encoder": 12.850764274597168,
+        "sleep_classifier": 8.557059288024902
+      },
+      "new_pseudo_ce": {
+        "feature_extractor": 54.2117805480957,
+        "feature_encoder": 17.237367630004883,
+        "sleep_classifier": 12.054245948791504
+      },
+      "model_nhe_kl": {
+        "feature_extractor": 38.64236068725586,
+        "feature_encoder": 27.78775405883789,
+        "sleep_classifier": 22.001726150512695
+      },
+      "pgd_pseudo_ce": {
+        "feature_extractor": 37.84189224243164,
+        "feature_encoder": 15.15153980255127,
+        "sleep_classifier": 11.931278228759766
+      }
+    }
+  }
+}

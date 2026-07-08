@@ -1,0 +1,272 @@
+{
+  "config": {
+    "data_root": "/home/undefined/Disk/ai-storage/BrainUICL/processed/isruc_group1_npy_float32",
+    "checkpoint_root": "/home/undefined/Disk/ai-storage/BrainUICL/model_parameter",
+    "seed": 4321,
+    "device": "cpu",
+    "batch": 4,
+    "candidate_count": 6,
+    "sequential_k": 2,
+    "update_batches": 4,
+    "eval_max_batches": 0,
+    "attack_lr": 8e-05,
+    "benign_lr": 8e-05,
+    "source_weight": 0.2,
+    "target_weight": 1.0
+  },
+  "split": {
+    "train": [
+      7,
+      16,
+      18,
+      23,
+      24,
+      28,
+      30,
+      34,
+      35,
+      37,
+      38,
+      41,
+      45,
+      48,
+      50,
+      53,
+      69,
+      71,
+      74,
+      78,
+      79,
+      82,
+      93,
+      94
+    ],
+    "val": [
+      12,
+      21,
+      29,
+      58,
+      76,
+      77
+    ],
+    "old_generalization": [
+      6,
+      14,
+      32,
+      39,
+      43,
+      44,
+      51,
+      56,
+      59,
+      62,
+      67,
+      68,
+      72,
+      73,
+      75,
+      88,
+      90,
+      92,
+      100
+    ],
+    "new_order_prefix": [
+      64,
+      89,
+      1,
+      27,
+      60,
+      5
+    ],
+    "candidate_subjects": [
+      64,
+      89,
+      1,
+      27,
+      60,
+      5
+    ],
+    "selected_proxy_order": [
+      64,
+      5
+    ],
+    "natural_order": [
+      64,
+      89
+    ]
+  },
+  "baseline_old": {
+    "acc": 0.7023952095808383,
+    "mf1": 0.6879558256933758,
+    "entropy": 0.2166995297871628,
+    "confidence": 0.9176514566372969,
+    "n_epochs": 16700
+  },
+  "candidate_scores": [
+    {
+      "subject": 64,
+      "subject_acc_m0": 0.7290697674418605,
+      "subject_mf1_m0": 0.7631163096154122,
+      "subject_entropy_m0": 0.2574403700883168,
+      "subject_confidence_m0": 0.8910528370460798,
+      "proxy_loss": 5.9602028131484985,
+      "old_acc_after_proxy": 0.5637125748502994,
+      "old_mf1_after_proxy": 0.5195823325745637,
+      "old_acc_drop": 0.138682634730539,
+      "old_mf1_drop": 0.1683734931188121
+    },
+    {
+      "subject": 5,
+      "subject_acc_m0": 0.3107142857142857,
+      "subject_mf1_m0": 0.11302397770724026,
+      "subject_entropy_m0": 0.7257614375225135,
+      "subject_confidence_m0": 0.7454378036516053,
+      "proxy_loss": 3.554510146379471,
+      "old_acc_after_proxy": 0.5861077844311378,
+      "old_mf1_after_proxy": 0.5493983185116715,
+      "old_acc_drop": 0.11628742514970059,
+      "old_mf1_drop": 0.13855750718170423
+    },
+    {
+      "subject": 27,
+      "subject_acc_m0": 0.7170454545454545,
+      "subject_mf1_m0": 0.6478294628169081,
+      "subject_entropy_m0": 0.11613492867662051,
+      "subject_confidence_m0": 0.9557267379354347,
+      "proxy_loss": 6.512517988681793,
+      "old_acc_after_proxy": 0.6052095808383233,
+      "old_mf1_after_proxy": 0.576117356636056,
+      "old_acc_drop": 0.09718562874251502,
+      "old_mf1_drop": 0.11183846905731976
+    },
+    {
+      "subject": 89,
+      "subject_acc_m0": 0.801,
+      "subject_mf1_m0": 0.7326458009878241,
+      "subject_entropy_m0": 0.15037098715760056,
+      "subject_confidence_m0": 0.9412411796152592,
+      "proxy_loss": 6.137744665145874,
+      "old_acc_after_proxy": 0.6197604790419161,
+      "old_mf1_after_proxy": 0.5937253028778681,
+      "old_acc_drop": 0.08263473053892223,
+      "old_mf1_drop": 0.0942305228155077
+    },
+    {
+      "subject": 1,
+      "subject_acc_m0": 0.2,
+      "subject_mf1_m0": 0.09178451178451179,
+      "subject_entropy_m0": 0.6886858423955219,
+      "subject_confidence_m0": 0.7365018739949826,
+      "proxy_loss": 3.343158185482025,
+      "old_acc_after_proxy": 0.6450898203592814,
+      "old_mf1_after_proxy": 0.6136255115383753,
+      "old_acc_drop": 0.057305389221556924,
+      "old_mf1_drop": 0.07433031415500047
+    },
+    {
+      "subject": 60,
+      "subject_acc_m0": 0.7068181818181818,
+      "subject_mf1_m0": 0.6198544430288646,
+      "subject_entropy_m0": 0.17039227315635436,
+      "subject_confidence_m0": 0.9348602597686377,
+      "proxy_loss": 5.324707627296448,
+      "old_acc_after_proxy": 0.6604191616766467,
+      "old_mf1_after_proxy": 0.6291992578456742,
+      "old_acc_drop": 0.04197604790419163,
+      "old_mf1_drop": 0.05875656784770156
+    }
+  ],
+  "benign_natural_curve": [
+    {
+      "step": 0,
+      "subject": null,
+      "acc": 0.7023952095808383,
+      "mf1": 0.6879558256933758,
+      "entropy": 0.2166995297871628,
+      "confidence": 0.9176514566372969,
+      "n_epochs": 16700
+    },
+    {
+      "step": 1,
+      "subject": 64,
+      "loss": 0.23792466521263123,
+      "acc": 0.681497005988024,
+      "mf1": 0.6694337290741144,
+      "entropy": 0.20550611158887058,
+      "confidence": 0.9216680052840781,
+      "n_epochs": 16700
+    },
+    {
+      "step": 2,
+      "subject": 89,
+      "loss": 0.3479834385216236,
+      "acc": 0.6911976047904191,
+      "mf1": 0.6697476338257398,
+      "entropy": 0.23203374139908414,
+      "confidence": 0.9127218756436588,
+      "n_epochs": 16700
+    }
+  ],
+  "benign_selected_curve": [
+    {
+      "step": 0,
+      "subject": null,
+      "acc": 0.7023952095808383,
+      "mf1": 0.6879558256933758,
+      "entropy": 0.2166995297871628,
+      "confidence": 0.9176514566372969,
+      "n_epochs": 16700
+    },
+    {
+      "step": 1,
+      "subject": 64,
+      "loss": 0.3655003309249878,
+      "acc": 0.691556886227545,
+      "mf1": 0.657548274596807,
+      "entropy": 0.18599365022996162,
+      "confidence": 0.9309012596362722,
+      "n_epochs": 16700
+    },
+    {
+      "step": 2,
+      "subject": 5,
+      "loss": 0.5004946887493134,
+      "acc": 0.6467664670658683,
+      "mf1": 0.5940668931953299,
+      "entropy": 0.21183068506505195,
+      "confidence": 0.9175214964347685,
+      "n_epochs": 16700
+    }
+  ],
+  "attack_selected_curve": [
+    {
+      "step": 0,
+      "subject": null,
+      "acc": 0.7023952095808383,
+      "mf1": 0.6879558256933758,
+      "entropy": 0.2166995297871628,
+      "confidence": 0.9176514566372969,
+      "n_epochs": 16700
+    },
+    {
+      "step": 1,
+      "subject": 64,
+      "loss": 5.7620991468429565,
+      "acc": 0.5442514970059881,
+      "mf1": 0.49143693575647074,
+      "entropy": 0.5234319697537673,
+      "confidence": 0.8002721445949491,
+      "n_epochs": 16700
+    },
+    {
+      "step": 2,
+      "subject": 5,
+      "loss": 1.6887113749980927,
+      "acc": 0.378562874251497,
+      "mf1": 0.2738758116460538,
+      "entropy": 0.956256220392758,
+      "confidence": 0.6100602703278293,
+      "n_epochs": 16700
+    }
+  ]
+}

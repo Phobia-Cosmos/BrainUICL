@@ -8,6 +8,7 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
 
 class CPC(object):
+    # TODO:这个block传过来是什么类型的？
     def __init__(self, blocks, args):
         super(CPC, self).__init__()
         self.args = args
@@ -16,6 +17,7 @@ class CPC(object):
         self.classifier = blocks[2]
         self.model_param = ModelConfig(args.dataset)
 
+        # TODO:为什么这两个值相等？
         self.num_channels = self.model_param.EncoderParam.d_model
         self.d_model = self.model_param.EncoderParam.d_model
 
@@ -229,7 +231,10 @@ class BufferPseudoLabelFinetune(object):
 
         confident_pred = pred_target[pred_prob > self.confidence_level]
         confident_labels = target_pseudo_labels[pred_prob > self.confidence_level]
-        loss_new = self.cross_entropy(confident_pred, confident_labels.long())
+        if confident_pred.shape[0] == 0:
+            loss_new = pred_target.sum() * 0.0
+        else:
+            loss_new = self.cross_entropy(confident_pred, confident_labels.long())
         loss_old = self.cross_entropy(pred_train, label_train.long())
 
         loss = self.args.alpha*loss_new + (1-self.args.alpha)*loss_old

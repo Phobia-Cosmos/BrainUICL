@@ -7,19 +7,40 @@ from torch.utils.data import DataLoader
 from dataloader.data_loader import Builder
 from trainer.pretrainer import pretraining
 from trainer.trainer import trainer
-from trainer.trainer_bci2000 import trainer_bci2000
+
+
+def str2bool(value):
+    if isinstance(value, bool):
+        return value
+    value = value.lower()
+    if value in ("yes", "true", "t", "1", "y"):
+        return True
+    if value in ("no", "false", "f", "0", "n"):
+        return False
+    raise argparse.ArgumentTypeError("Boolean value expected.")
+
 
 def get_path_loader(params):
-    path = [i for i in range(1, 101) if i not in [8, 40]]
+    path = []
     path_name = {int(j): [[], []] for j in path}
-    for t_idx in path:
+    for t_idx in [i for i in range(1, 101) if i not in [8, 40]]:
         num = 0
         file_path = params.file_path + f"/{t_idx}/data"
         label_path = params.file_path + f"/{t_idx}/label"
+        if not os.path.isdir(file_path) or not os.path.isdir(label_path):
+            continue
+        path_name[t_idx] = [[], []]
         while os.path.exists(file_path + f"/{num}.npy"):
             path_name[t_idx][0].append(file_path + f"/{num}.npy")
             path_name[t_idx][1].append(label_path + f"/{num}.npy")
             num += 1
+        if path_name[t_idx][0]:
+            path.append(t_idx)
+
+    if len(path) < 5:
+        raise ValueError(
+            f"Need at least 5 subjects with .npy data under {params.file_path}; found {len(path)}."
+        )
 
     return path, path_name
 
@@ -28,12 +49,18 @@ def get_idx(params, path, performance):
     fix_randomness(params.seed)
     idx = path
     path_len = len(idx)
-    old_task_idx = list(np.random.choice(idx, int(path_len*0.2), replace=False))
-    new_task_idx = list(np.random.choice(list(set(idx)-set(old_task_idx)), int(path_len*0.5), replace=False))
+    old_count = max(1, int(path_len * 0.2))
+    new_count = max(1, int(path_len * 0.5))
+    new_count = min(new_count, path_len - old_count - 2)
+    old_task_idx = list(np.random.choice(idx, old_count, replace=False))
+    remaining_idx = sorted(set(idx) - set(old_task_idx))
+    new_task_idx = list(np.random.choice(remaining_idx, new_count, replace=False))
 
-    train_val_idx = list(set(idx)-set(old_task_idx)-set(new_task_idx))
+    train_val_idx = sorted(set(idx)-set(old_task_idx)-set(new_task_idx))
 
-    train_idx = list(np.random.choice(train_val_idx, int(len(train_val_idx)*0.8), replace=False))
+    train_count = max(1, int(len(train_val_idx)*0.8))
+    train_count = min(train_count, len(train_val_idx) - 1)
+    train_idx = list(np.random.choice(train_val_idx, train_count, replace=False))
     params.train_num = len(train_idx)
     val_idx = [i for i in train_val_idx if i not in train_idx]
     performance["stability"] = {"ACC": [], "MF1": [], "AAA": [], "FR": []}
@@ -88,14 +115,14 @@ def main():
     parser.add_argument('--lr', type=float, default=1e-4, help='learning rate')
     parser.add_argument('--ssl_lr', type=float, default=1e-6, help='ssl learning rate')
     parser.add_argument('--cl_lr', type=float, default=1e-7, help='cl learning rate')
-    parser.add_argument('--alpha', type=int, default=0.01, help='loss weight')
+    parser.add_argument('--alpha', type=float, default=0.01, help='loss weight')
     parser.add_argument('--file_path', type=str, default="input your file path", help='data file path')  # input your file path
     parser.add_argument('--optimizer', type=str, default='AdamW', help='optimizer')
     parser.add_argument('--beta1', type=float, default=0.5, help='beta1')
     parser.add_argument('--beta2', type=float, default=0.99, help='beta2')
     parser.add_argument('--weight_decay', type=float, default=3e-4, help='weight decay')
     parser.add_argument('--num_worker', type=int, default=4, help='num worker')
-    parser.add_argument('--is_pretrain', type=bool, default=False, help='pretraining')
+    parser.add_argument('--is_pretrain', type=str2bool, default=False, help='pretraining')
     parser.add_argument('--train_path', type=list, default=None, help='train path')
     parser.add_argument('--train_len', type=int, default=0, help='train path len')
     parser.add_argument('--train_num', type=int, default=0, help='train individual number')
@@ -106,7 +133,7 @@ def main():
     performance = dict()
 
     fix_randomness(params.seed)
-    torch.multiprocessing.set_start_method('spawn')
+    torch.multiprocessing.set_start_method('spawn', force=True)
     path, path_name = get_path_loader(params)
 
     train_dataset, val_dataset, old_dataset, new_task_idx = get_loader(params, path, path_name, performance)
@@ -120,11 +147,12 @@ def main():
     if params.is_pretrain:
         pretraining(train_loader, val_loader, params)
     else:
-        if param.dataset == 'BCI2000:
+        if params.dataset == 'BCI2000':
+            from trainer.trainer_bci2000 import trainer_bci2000
             trainer_bci2000(old_task_loader, new_task_idx, params, performance)
         else:
             trainer(old_task_loader, new_task_idx, params, performance)
-    analysis(performance)
+        analysis(performance)
 
 
 if __name__ == '__main__':
