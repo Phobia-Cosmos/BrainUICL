@@ -1,0 +1,470 @@
+diff --git a/DATA_ONLY_THREAT_MODEL_RESULTS.md b/DATA_ONLY_THREAT_MODEL_RESULTS.md
+index dc27418..6dbaa43 100644
+--- a/DATA_ONLY_THREAT_MODEL_RESULTS.md
++++ b/DATA_ONLY_THREAT_MODEL_RESULTS.md
+@@ -146,3 +146,14 @@ old/new centroid distance：
+ ```
+ 
+ 也就是从“让当前预测变成 second-best”升级为“让目标模型按原始训练流程更新后自己变差”。这仍然只改数据，但比普通 PGD/target-flip 更接近真正的投毒目标。
++
++
++## 2026-07-08 更新：proxy-meta conflict 已验证
++
++上一节提出的 data-only meta-poisoning 已实现为 `--attack-mode proxy_meta_conflict`。10-sub 对照中，attack 相比 clean：
++
++- final old ACC/MF1：`0.6772/0.6396 -> 0.6487/0.6106`；
++- AAA/AAF1：`0.7032/0.6844 -> 0.5816/0.5314`；
++- final new after ACC/MF1：`0.6047/0.5401 -> 0.4063/0.3183`。
++
++完整报告：[PROXY_META_CONFLICT_ATTACK_RESULTS.md](/home/undefined/Desktop/bci/papers/TTAP/BrainUICL/PROXY_META_CONFLICT_ATTACK_RESULTS.md:1)
+diff --git a/experiments/rttdp_brainuicl_full.py b/experiments/rttdp_brainuicl_full.py
+index 47f79fa..d8804e5 100644
+--- a/experiments/rttdp_brainuicl_full.py
++++ b/experiments/rttdp_brainuicl_full.py
+@@ -297,8 +297,14 @@ def update_loss_drift_direction(args, teacher_blocks, attack_state):
+         attack_state.set_drift_direction(direction_sum / count, args.stealth_direction_momentum)
+ 
+ 
+-def make_new_loader(args, subject, is_buffer, shuffle):
+-    new_paths = subject_paths(args.data_root, subject)
++def get_uploaded_subject_paths(args, subject, use_uploaded=True):
++    if use_uploaded and hasattr(args, "uploaded_subject_paths") and int(subject) in args.uploaded_subject_paths:
++        return args.uploaded_subject_paths[int(subject)]
++    return subject_paths(args.data_root, subject)
++
++
++def make_new_loader(args, subject, is_buffer, shuffle, use_uploaded=True):
++    new_paths = get_uploaded_subject_paths(args, subject, use_uploaded=use_uploaded)
+     if is_buffer:
+         dataset = BufferDataset(new_paths, args.train_paths, args.train_len)
+     else:
+@@ -465,7 +471,10 @@ class AttackState:
+         self.class_prob = torch.ones(class_num, class_num, device=device) / class_num
+         self.momentum = 0.8
+         self.drift_direction = None
+-        self.stats = {
++        self.stats = self.empty_stats()
++
++    def empty_stats(self):
++        return {
+             "attempted": 0,
+             "accepted": 0,
+             "clean_pass": 0,
+@@ -473,6 +482,10 @@ class AttackState:
+             "mean_rel_eog": [],
+             "mean_rel_eeg": [],
+             "mean_feature_shift": [],
++            "mean_proxy_conflict": [],
++            "mean_proxy_update_norm": [],
++            "mean_proxy_old_norm": [],
++            "mean_proxy_confidence": [],
+         }
+ 
+     def nhe_target(self, logits):
+@@ -522,6 +535,13 @@ class AttackState:
+         self.stats["mean_rel_eeg"].append(float(rel_eeg.detach().mean().cpu()))
+         self.stats["mean_feature_shift"].append(float(feature_shift.detach().mean().cpu()))
+ 
++    def record_proxy_meta(self, clean_pass, adv_pass, rel_eog, rel_eeg, feature_shift, conflict, update_norm, old_norm, confidence):
++        self.record_stealth(clean_pass, adv_pass, adv_pass, rel_eog, rel_eeg, feature_shift)
++        self.stats["mean_proxy_conflict"].append(float(conflict.detach().cpu()))
++        self.stats["mean_proxy_update_norm"].append(float(update_norm.detach().cpu()))
++        self.stats["mean_proxy_old_norm"].append(float(old_norm.detach().cpu()))
++        self.stats["mean_proxy_confidence"].append(float(confidence.detach().mean().cpu()))
++
+     def flush_stats(self):
+         attempted = max(self.stats["attempted"], 1)
+         payload = {
+@@ -532,16 +552,12 @@ class AttackState:
+             "mean_rel_eog": float(np.mean(self.stats["mean_rel_eog"])) if self.stats["mean_rel_eog"] else 0.0,
+             "mean_rel_eeg": float(np.mean(self.stats["mean_rel_eeg"])) if self.stats["mean_rel_eeg"] else 0.0,
+             "mean_feature_shift": float(np.mean(self.stats["mean_feature_shift"])) if self.stats["mean_feature_shift"] else 0.0,
++            "mean_proxy_conflict": float(np.mean(self.stats["mean_proxy_conflict"])) if self.stats["mean_proxy_conflict"] else 0.0,
++            "mean_proxy_update_norm": float(np.mean(self.stats["mean_proxy_update_norm"])) if self.stats["mean_proxy_update_norm"] else 0.0,
++            "mean_proxy_old_norm": float(np.mean(self.stats["mean_proxy_old_norm"])) if self.stats["mean_proxy_old_norm"] else 0.0,
++            "mean_proxy_confidence": float(np.mean(self.stats["mean_proxy_confidence"])) if self.stats["mean_proxy_confidence"] else 0.0,
+         }
+-        self.stats = {
+-            "attempted": 0,
+-            "accepted": 0,
+-            "clean_pass": 0,
+-            "adv_pass": 0,
+-            "mean_rel_eog": [],
+-            "mean_rel_eeg": [],
+-            "mean_feature_shift": [],
+-        }
++        self.stats = self.empty_stats()
+         return payload
+ 
+ 
+@@ -552,7 +568,7 @@ def target_for_attack(logits, attack_mode, state):
+ 
+ 
+ def is_input_attack(attack_mode):
+-    return attack_mode.startswith("pgd") or attack_mode.startswith("stealth_")
++    return attack_mode.startswith("pgd") or attack_mode.startswith("stealth_") or attack_mode.startswith("proxy_")
+ 
+ 
+ def sequence_pass_mask(logits, args):
+@@ -677,6 +693,214 @@ def poison_stealth_drift_batch(eog_new, eeg_new, blocks, state, args):
+     return eog_out.detach(), eeg_out.detach()
+ 
+ 
++def proxy_meta_parameters(blocks, args):
++    if args.proxy_meta_param_scope == "classifier":
++        modules = [blocks[2]]
++    elif args.proxy_meta_param_scope == "encoder_head":
++        modules = [blocks[1], blocks[2]]
++    elif args.proxy_meta_param_scope == "all":
++        modules = [blocks[0], blocks[1], blocks[2]]
++    else:
++        raise ValueError(f"Unsupported proxy meta parameter scope: {args.proxy_meta_param_scope}")
++    params = []
++    for module in modules:
++        params.extend([param for param in module.parameters() if param.requires_grad])
++    return params
++
++
++def grad_dot_and_norms(update_grads, old_grads, device):
++    dot = torch.zeros((), device=device)
++    update_sq = torch.zeros((), device=device)
++    old_sq = torch.zeros((), device=device)
++    for update_grad, old_grad in zip(update_grads, old_grads):
++        if update_grad is not None:
++            update_sq = update_sq + update_grad.pow(2).sum()
++        if old_grad is not None:
++            old_sq = old_sq + old_grad.pow(2).sum()
++        if update_grad is not None and old_grad is not None:
++            dot = dot + (update_grad * old_grad).sum()
++    return dot, update_sq.sqrt(), old_sq.sqrt()
++
++
++def restore_modes(blocks, modes):
++    for block, mode in zip(blocks, modes):
++        block.train(mode)
++
++
++def poison_proxy_meta_conflict_batch(eog_new, eeg_new, eog_replay, eeg_replay, label_replay, student_blocks, teacher_blocks, state, args):
++    student_modes = [block.training for block in student_blocks]
++    teacher_modes = [block.training for block in teacher_blocks]
++    set_train(student_blocks, False)
++    set_train(teacher_blocks, False)
++
++    eog_base = eog_new.detach()
++    eeg_base = eeg_new.detach()
++    eog_replay = eog_replay.detach()
++    eeg_replay = eeg_replay.detach()
++    label_replay = label_replay.detach()
++
++    eps_eog = eog_base.detach().std().clamp_min(1e-6) * args.proxy_meta_eps_scale
++    eps_eeg = eeg_base.detach().std().clamp_min(1e-6) * args.proxy_meta_eps_scale
++    step_eog = eps_eog / max(args.proxy_meta_steps // 2, 1)
++    step_eeg = eps_eeg / max(args.proxy_meta_steps // 2, 1)
++
++    meta_params = proxy_meta_parameters(student_blocks, args)
++    if not meta_params:
++        restore_modes(student_blocks, student_modes)
++        restore_modes(teacher_blocks, teacher_modes)
++        return eog_new, eeg_new
++
++    with torch.no_grad():
++        logits_clean_seq = forward_blocks(teacher_blocks, eog_base, eeg_base, args)
++        clean_pass = sequence_pass_mask(logits_clean_seq, args)
++        feat_clean = feature_embeddings(student_blocks, eog_base, eeg_base, args)
++        stats_clean = raw_stats(eog_base, eeg_base)
++
++    old_logits = flat_logits(forward_blocks(student_blocks, eog_replay, eeg_replay, args))
++    old_loss = F.cross_entropy(old_logits, flat_labels(label_replay))
++    old_grads = torch.autograd.grad(old_loss, meta_params, retain_graph=False, create_graph=False, allow_unused=True)
++    old_grads = [None if grad is None else grad.detach() for grad in old_grads]
++    _old_dot, _old_update_norm, old_norm_static = grad_dot_and_norms(old_grads, old_grads, args.device)
++    if float(old_norm_static.detach().cpu()) <= 1e-12:
++        restore_modes(student_blocks, student_modes)
++        restore_modes(teacher_blocks, teacher_modes)
++        return eog_new, eeg_new
++
++    delta_eog = torch.zeros_like(eog_base)
++    delta_eeg = torch.zeros_like(eeg_base)
++    if args.pgd_random_start:
++        delta_eog.uniform_(-float(eps_eog), float(eps_eog))
++        delta_eeg.uniform_(-float(eps_eeg), float(eps_eeg))
++
++    last_conflict = torch.zeros((), device=args.device)
++    last_update_norm = torch.zeros((), device=args.device)
++    last_confidence = torch.zeros(eog_base.shape[0] * args.model_param.SeqLength, device=args.device)
++
++    for _ in range(args.proxy_meta_steps):
++        delta_eog.requires_grad_(True)
++        delta_eeg.requires_grad_(True)
++        eog_adv = eog_base + delta_eog
++        eeg_adv = eeg_base + delta_eeg
++
++        teacher_logits = flat_logits(forward_blocks(teacher_blocks, eog_adv, eeg_adv, args))
++        teacher_probs = teacher_logits.softmax(dim=1)
++        pseudo_conf, pseudo_labels = teacher_probs.max(dim=1)
++        confident = pseudo_conf > args.confidence
++        soft_weights = torch.sigmoid((pseudo_conf - args.confidence) / max(args.proxy_meta_conf_tau, 1e-6))
++        update_weights = confident.float() + args.proxy_meta_soft_weight * soft_weights
++        update_weights = update_weights.clamp(max=1.0)
++
++        student_logits = flat_logits(forward_blocks(student_blocks, eog_adv, eeg_adv, args))
++        ce_new = F.cross_entropy(student_logits, pseudo_labels.detach(), reduction="none")
++        if float(update_weights.detach().sum().cpu()) > 0:
++            loss_new = (ce_new * update_weights).sum() / update_weights.sum().clamp_min(1e-6)
++        else:
++            loss_new = ce_new.mean()
++
++        update_grads = torch.autograd.grad(loss_new, meta_params, retain_graph=True, create_graph=True, allow_unused=True)
++        dot, update_norm, old_norm = grad_dot_and_norms(update_grads, old_grads, args.device)
++        conflict = dot / (update_norm * old_norm + 1e-12)
++        confidence_loss = F.relu(args.confidence - pseudo_conf).mean()
++        stats_adv = raw_stats(eog_adv, eeg_adv)
++        raw_loss = F.mse_loss(stats_adv, stats_clean)
++        l2_loss = delta_eog.pow(2).mean() / eps_eog.pow(2).clamp_min(1e-12) + delta_eeg.pow(2).mean() / eps_eeg.pow(2).clamp_min(1e-12)
++        loss = (
++            args.proxy_meta_conflict_weight * conflict
++            + args.proxy_meta_confidence_weight * confidence_loss
++            + args.proxy_meta_raw_weight * raw_loss
++            + args.proxy_meta_l2_weight * l2_loss
++            - args.proxy_meta_grad_norm_weight * update_norm / old_norm_static.clamp_min(1e-12)
++        )
++        grad_eog, grad_eeg = torch.autograd.grad(loss, [delta_eog, delta_eeg])
++        delta_eog = (delta_eog - step_eog * grad_eog.sign()).detach().clamp(-eps_eog, eps_eog)
++        delta_eeg = (delta_eeg - step_eeg * grad_eeg.sign()).detach().clamp(-eps_eeg, eps_eeg)
++        last_conflict = conflict.detach()
++        last_update_norm = update_norm.detach()
++        last_confidence = pseudo_conf.detach()
++
++    eog_adv = eog_base + delta_eog
++    eeg_adv = eeg_base + delta_eeg
++    with torch.no_grad():
++        logits_adv_seq = forward_blocks(teacher_blocks, eog_adv, eeg_adv, args)
++        adv_pass = sequence_pass_mask(logits_adv_seq, args)
++        rel_eog = torch.linalg.norm((eog_adv - eog_base).reshape(eog_base.shape[0], -1), dim=1) / (
++            torch.linalg.norm(eog_base.reshape(eog_base.shape[0], -1), dim=1) + 1e-12
++        )
++        rel_eeg = torch.linalg.norm((eeg_adv - eeg_base).reshape(eeg_base.shape[0], -1), dim=1) / (
++            torch.linalg.norm(eeg_base.reshape(eeg_base.shape[0], -1), dim=1) + 1e-12
++        )
++        feat_adv = feature_embeddings(student_blocks, eog_adv, eeg_adv, args)
++        feature_shift = torch.linalg.norm(feat_adv - feat_clean, dim=1)
++        state.record_proxy_meta(
++            clean_pass,
++            adv_pass,
++            rel_eog,
++            rel_eeg,
++            feature_shift,
++            last_conflict,
++            last_update_norm,
++            old_norm_static,
++            last_confidence,
++        )
++
++    restore_modes(student_blocks, student_modes)
++    restore_modes(teacher_blocks, teacher_modes)
++    return eog_adv.detach(), eeg_adv.detach()
++
++
++def use_individual_proxy_upload(args):
++    return args.attack_mode == "proxy_meta_conflict" and args.proxy_meta_poison_scope == "individual"
++
++
++def materialize_proxy_meta_subject(args, subject, num, student_blocks, teacher_blocks, state):
++    clean_paths = subject_paths(args.data_root, subject)
++    new_loader = DataLoader(SequenceDataset(clean_paths), batch_size=args.batch, shuffle=False, num_workers=args.num_worker)
++    replay_loader = DataLoader(SequenceDataset(args.train_paths), batch_size=args.batch, shuffle=True, num_workers=args.num_worker)
++    replay_iter = iter(replay_loader)
++    save_data_path = args.variant_dir / "poisoned_uploads" / f"individual_{num}" / "data"
++    save_data_path.mkdir(parents=True, exist_ok=True)
++
++    poisoned_data_paths = []
++    label_paths = []
++    global_idx = 0
++    for eog, eeg, _labels in new_loader:
++        eog = eog.to(args.device)
++        eeg = eeg.to(args.device)
++        try:
++            eog_replay, eeg_replay, label_replay = next(replay_iter)
++        except StopIteration:
++            replay_iter = iter(replay_loader)
++            eog_replay, eeg_replay, label_replay = next(replay_iter)
++        eog_replay = eog_replay.to(args.device)
++        eeg_replay = eeg_replay.to(args.device)
++        label_replay = label_replay.to(args.device)
++
++        eog_adv, eeg_adv = poison_proxy_meta_conflict_batch(
++            eog,
++            eeg,
++            eog_replay,
++            eeg_replay,
++            label_replay,
++            student_blocks,
++            teacher_blocks,
++            state,
++            args,
++        )
++        for row in range(eog_adv.shape[0]):
++            idx = global_idx + row
++            save_data_file = save_data_path / f"{idx}.npy"
++            poisoned_x = torch.cat((eog_adv[row], eeg_adv[row]), dim=1).detach().cpu().numpy().astype(np.float32)
++            np.save(save_data_file, poisoned_x)
++            poisoned_data_paths.append(save_data_file)
++            label_paths.append(clean_paths[1][idx])
++        global_idx += eog_adv.shape[0]
++    print(
++        f"[{args.variant}] Materialized poisoned upload for Subject {subject}: {len(poisoned_data_paths)} sequences",
++        flush=True,
++    )
++    return poisoned_data_paths, label_paths
++
++
+ def poison_new_batch(eog_new, eeg_new, blocks, attack_mode, state, args):
+     if attack_mode.startswith("stealth_"):
+         return poison_stealth_drift_batch(eog_new, eeg_new, blocks, state, args)
+@@ -777,10 +1001,23 @@ def incremental_train(blocks, teacher_blocks, args, new_task_loader, new_task_id
+             align_feature.append([])
+         for batch_idx, (eog, eeg, label) in enumerate(buffer_loader):
+             eog, eeg, label = eog.to(args.device), eeg.to(args.device), label.to(args.device)
+-            if is_input_attack(args.attack_mode):
++            if is_input_attack(args.attack_mode) and not use_individual_proxy_upload(args):
+                 seq_len = args.model_param.SeqLength
+                 eog_new, eeg_new = eog[:, :seq_len, :, :], eeg[:, :seq_len, :, :]
+-                eog_adv, eeg_adv = poison_new_batch(eog_new, eeg_new, tmp_blocks_teacher, args.attack_mode, attack_state, args)
++                if args.attack_mode.startswith("proxy_"):
++                    eog_adv, eeg_adv = poison_proxy_meta_conflict_batch(
++                        eog_new,
++                        eeg_new,
++                        eog[:, seq_len:, :, :],
++                        eeg[:, seq_len:, :, :],
++                        label[:, seq_len:],
++                        tmp_blocks,
++                        tmp_blocks_teacher,
++                        attack_state,
++                        args,
++                    )
++                else:
++                    eog_adv, eeg_adv = poison_new_batch(eog_new, eeg_new, tmp_blocks_teacher, args.attack_mode, attack_state, args)
+                 eog = torch.cat((eog_adv, eog[:, seq_len:, :, :]), dim=1)
+                 eeg = torch.cat((eeg_adv, eeg[:, seq_len:, :, :]), dim=1)
+             loss, tmp_blocks, feature_before = algorithm.update(eeg, eog, label)
+@@ -835,12 +1072,12 @@ def incremental_train(blocks, teacher_blocks, args, new_task_loader, new_task_id
+ 
+ 
+ def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state):
+-    new_paths = subject_paths(args.data_root, new_task_id)
++    new_paths = get_uploaded_subject_paths(args, new_task_id, use_uploaded=True)
+     new_loader = DataLoader(SequenceDataset(new_paths), batch_size=args.batch, shuffle=False, num_workers=args.num_worker)
+     save_path = args.variant_dir / "pseudo_labels" / f"individual_{num}" / "label"
+     save_data_path = args.variant_dir / "poisoned_sequences" / f"individual_{num}" / "data"
+     save_path.mkdir(parents=True, exist_ok=True)
+-    if args.store_poisoned_buffer:
++    if args.store_poisoned_buffer and not use_individual_proxy_upload(args):
+         save_data_path.mkdir(parents=True, exist_ok=True)
+     added = 0
+     biased = 0
+@@ -849,7 +1086,7 @@ def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state):
+     for eog, eeg, _labels in new_loader:
+         eog = eog.to(args.device)
+         eeg = eeg.to(args.device)
+-        if args.store_poisoned_buffer and is_input_attack(args.attack_mode):
++        if args.store_poisoned_buffer and is_input_attack(args.attack_mode) and not use_individual_proxy_upload(args):
+             eog_eval, eeg_eval = poison_new_batch(eog, eeg, tmp_blocks, args.attack_mode, attack_state, args)
+         else:
+             eog_eval, eeg_eval = eog, eeg
+@@ -872,7 +1109,7 @@ def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state):
+                             label_to_save = np.argsort(probs[row, :, :], axis=0)[-2, :].reshape(-1)
+                         biased += 1
+                 np.save(save_label_path, label_to_save)
+-                if args.store_poisoned_buffer and is_input_attack(args.attack_mode):
++                if args.store_poisoned_buffer and is_input_attack(args.attack_mode) and not use_individual_proxy_upload(args):
+                     save_data_file = save_data_path / f"{idx}.npy"
+                     poisoned_x = torch.cat((eog_eval[row], eeg_eval[row]), dim=1).detach().cpu().numpy().astype(np.float32)
+                     np.save(save_data_file, poisoned_x)
+@@ -922,6 +1159,7 @@ def run_variant(base_args, variant, attack_mode, new_order):
+     args.train_paths = [list(args.base_train_paths[0]), list(args.base_train_paths[1])]
+     args.train_len = len(args.train_paths[0])
+     args.alpha = args.initial_alpha
++    args.uploaded_subject_paths = {}
+ 
+     blocks = load_pretrained(args)
+     initial_blocks = load_pretrained(args)
+@@ -942,19 +1180,30 @@ def run_variant(base_args, variant, attack_mode, new_order):
+     performance["stability"]["AAA"].append(float(compute_aaa(performance["stability"]["ACC"])))
+     performance["stability"]["AAF1"] = compute_aaf1(performance["stability"]["MF1"])
+     performance["stability"]["FR"].append(float(compute_forget(performance["stability"]["ACC"])))
+-    save_blocks(blocks, args.variant_dir / "checkpoints" / "Pretrain", args.seed)
++    if not args.no_save_checkpoints:
++        save_blocks(blocks, args.variant_dir / "checkpoints" / "Pretrain", args.seed)
+ 
+     for num, subject in enumerate(new_order, start=1):
+         if num >= args.train_num:
+             args.alpha = np.power(0.1, np.log10(num / args.train_num) + 2)
+         print(f"[{variant}] New Task {num}/{len(new_order)} Subject {subject} attack={attack_mode}", flush=True)
+-        new_loader = make_new_loader(args, subject, is_buffer=False, shuffle=True)
+         last_blocks = clone_blocks(blocks, args)
+         teacher_blocks = clone_blocks(blocks, args)
++        if use_individual_proxy_upload(args):
++            args.uploaded_subject_paths[int(subject)] = materialize_proxy_meta_subject(
++                args,
++                subject,
++                num,
++                blocks,
++                teacher_blocks,
++                attack_state,
++            )
++        new_loader = make_new_loader(args, subject, is_buffer=False, shuffle=True, use_uploaded=True)
+         blocks, teacher_blocks = incremental_train(blocks, teacher_blocks, args, new_loader, subject, num, attack_state)
+-        save_blocks(blocks, args.variant_dir / "checkpoints" / f"individual_{num}", args.seed)
++        if not args.no_save_checkpoints:
++            save_blocks(blocks, args.variant_dir / "checkpoints" / f"individual_{num}", args.seed)
+ 
+-        new_eval_loader = make_new_loader(args, subject, is_buffer=False, shuffle=False)
++        new_eval_loader = make_new_loader(args, subject, is_buffer=False, shuffle=False, use_uploaded=False)
+         initial_result = evaluate(initial_blocks, new_eval_loader, args)
+         before_result = evaluate(last_blocks, new_eval_loader, args)
+         after_result = evaluate(blocks, new_eval_loader, args)
+@@ -972,7 +1221,7 @@ def run_variant(base_args, variant, attack_mode, new_order):
+         if biased:
+             buffer_row["biased"] = int(biased)
+         performance["buffer"].append(buffer_row)
+-        if attack_mode.startswith("stealth_"):
++        if attack_mode.startswith("stealth_") or attack_mode.startswith("proxy_"):
+             attack_stats = attack_state.flush_stats()
+             attack_stats.update({"step": num, "subject": int(subject)})
+             performance["attack_diagnostics"].append(attack_stats)
+@@ -998,6 +1247,7 @@ def write_comparison(output_root, clean_perf, attack_perf, clean_summary, attack
+             "ssl_epoch": args.ssl_epoch,
+             "incremental_epoch": args.incremental_epoch,
+             "attack_mode": args.attack_mode,
++            "proxy_meta_poison_scope": getattr(args, "proxy_meta_poison_scope", "batch"),
+         },
+         "clean_summary": clean_summary,
+         "attack_summary": attack_summary,
+@@ -1072,6 +1322,7 @@ def parse_args():
+             "stealth_source_drift",
+             "stealth_loss_drift",
+             "stealth_target_flip",
++            "proxy_meta_conflict",
+         ],
+         default="model_nhe",
+     )
+@@ -1113,7 +1364,19 @@ def parse_args():
+     parser.add_argument("--stealth-ascent-lr", type=float, default=1e-7)
+     parser.add_argument("--stealth-old-proxy-ascent-weight", type=float, default=0.0)
+     parser.add_argument("--stealth-new-entropy-ascent-weight", type=float, default=0.0)
++    parser.add_argument("--proxy-meta-steps", type=int, default=3)
++    parser.add_argument("--proxy-meta-eps-scale", type=float, default=0.20)
++    parser.add_argument("--proxy-meta-poison-scope", choices=["batch", "individual"], default="batch")
++    parser.add_argument("--proxy-meta-param-scope", choices=["classifier", "encoder_head", "all"], default="classifier")
++    parser.add_argument("--proxy-meta-conflict-weight", type=float, default=1.0)
++    parser.add_argument("--proxy-meta-confidence-weight", type=float, default=0.5)
++    parser.add_argument("--proxy-meta-raw-weight", type=float, default=0.005)
++    parser.add_argument("--proxy-meta-l2-weight", type=float, default=0.001)
++    parser.add_argument("--proxy-meta-grad-norm-weight", type=float, default=0.1)
++    parser.add_argument("--proxy-meta-conf-tau", type=float, default=0.05)
++    parser.add_argument("--proxy-meta-soft-weight", type=float, default=0.25)
+     parser.add_argument("--store-poisoned-buffer", action="store_true")
++    parser.add_argument("--no-save-checkpoints", action="store_true")
+     return parser.parse_args()
+ 
+ 

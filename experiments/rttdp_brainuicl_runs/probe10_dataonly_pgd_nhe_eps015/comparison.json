@@ -1,0 +1,205 @@
+{
+  "config": {
+    "clean_run_dir": "experiments/rttdp_brainuicl_runs/probe10_dataonly_pgd_nhe_eps015",
+    "attack_run_dir": "experiments/rttdp_brainuicl_runs/probe10_dataonly_pgd_nhe_eps015",
+    "attack_variant": "attack_pgd_nhe",
+    "seed": 4321,
+    "device": "cuda:0",
+    "final_step": 10
+  },
+  "clean_summary": {
+    "initial_acc": 0.591980638741104,
+    "before_acc": 0.5920039650272209,
+    "after_acc": 0.6151745638082847,
+    "initial_mf1": 0.5024796990779837,
+    "before_mf1": 0.5054106596830572,
+    "after_mf1": 0.5274961068516304
+  },
+  "attack_summary": {
+    "initial_acc": 0.591980638741104,
+    "before_acc": 0.5688984136019019,
+    "after_acc": 0.5813567699742117,
+    "initial_mf1": 0.5024796990779837,
+    "before_mf1": 0.4851898492859303,
+    "after_mf1": 0.49903341466075624
+  },
+  "clean_final": {
+    "acc": 0.6501796407185628,
+    "mf1": 0.6032201245242936,
+    "aaa": 0.7046271094175286,
+    "aaf1": 0.6828109327345376,
+    "fr": 0.07441820816639684
+  },
+  "attack_final": {
+    "acc": 0.6699401197604791,
+    "mf1": 0.626579495452676,
+    "aaa": 0.6897713663581927,
+    "aaf1": 0.6601396454262466,
+    "fr": 0.04628761401415055
+  },
+  "final_delta_attack_minus_clean": {
+    "acc": 0.019760479041916246,
+    "mf1": 0.02335937092838236,
+    "aaa": -0.014855743059335902,
+    "aaf1": -0.022671287308291044,
+    "fr": -0.028130594152246294
+  },
+  "clean_low_point": {
+    "min_acc": 0.6501796407185628,
+    "min_acc_step": 10,
+    "min_mf1": 0.6032201245242936,
+    "min_mf1_step": 10
+  },
+  "attack_low_point": {
+    "min_acc": 0.6699401197604791,
+    "min_acc_step": 10,
+    "min_mf1": 0.626579495452676,
+    "min_mf1_step": 10
+  },
+  "clean_buffer": {
+    "final_length": 1271,
+    "total_added": 241,
+    "total_biased": 0,
+    "mean_added": 24.1
+  },
+  "attack_buffer": {
+    "final_length": 1063,
+    "total_added": 33,
+    "total_biased": 0,
+    "mean_added": 3.3
+  },
+  "attack_diagnostics": {},
+  "final_checkpoint_eval": {
+    "old_generalization": {
+      "subjects": [
+        6,
+        14,
+        32,
+        39,
+        43,
+        44,
+        51,
+        56,
+        59,
+        62,
+        67,
+        68,
+        72,
+        73,
+        75,
+        88,
+        90,
+        92,
+        100
+      ],
+      "clean": {
+        "acc": 0.6501796407185628,
+        "mf1": 0.6032201245242936,
+        "n_epochs": 16700
+      },
+      "attack": {
+        "acc": 0.6699401197604791,
+        "mf1": 0.626579495452676,
+        "n_epochs": 16700
+      },
+      "delta_attack_minus_clean": {
+        "acc": 0.019760479041916246,
+        "mf1": 0.02335937092838236
+      }
+    },
+    "new_order_all": {
+      "subjects": [
+        64,
+        89,
+        1,
+        27,
+        60,
+        5,
+        52,
+        42,
+        80,
+        26
+      ],
+      "clean": {
+        "acc": 0.5254504504504505,
+        "mf1": 0.48235042273018375,
+        "n_epochs": 8880
+      },
+      "attack": {
+        "acc": 0.5682432432432433,
+        "mf1": 0.5226788638960539,
+        "n_epochs": 8880
+      },
+      "delta_attack_minus_clean": {
+        "acc": 0.0427927927927928,
+        "mf1": 0.040328441165870144
+      }
+    },
+    "source_train": {
+      "subjects": [
+        7,
+        16,
+        18,
+        23,
+        24,
+        28,
+        30,
+        34,
+        35,
+        37,
+        38,
+        41,
+        45,
+        48,
+        50,
+        53,
+        69,
+        71,
+        74,
+        78,
+        79,
+        82,
+        93,
+        94
+      ],
+      "clean": {
+        "acc": 0.6644174757281553,
+        "mf1": 0.6357424870388682,
+        "n_epochs": 20600
+      },
+      "attack": {
+        "acc": 0.7046601941747572,
+        "mf1": 0.6841109341470645,
+        "n_epochs": 20600
+      },
+      "delta_attack_minus_clean": {
+        "acc": 0.04024271844660188,
+        "mf1": 0.04836844710819632
+      }
+    },
+    "validation": {
+      "subjects": [
+        12,
+        21,
+        29,
+        58,
+        76,
+        77
+      ],
+      "clean": {
+        "acc": 0.6003802281368821,
+        "mf1": 0.5567006750364314,
+        "n_epochs": 5260
+      },
+      "attack": {
+        "acc": 0.6211026615969581,
+        "mf1": 0.5797075915727646,
+        "n_epochs": 5260
+      },
+      "delta_attack_minus_clean": {
+        "acc": 0.020722433460076073,
+        "mf1": 0.023006916536333244
+      }
+    }
+  }
+}

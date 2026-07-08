@@ -1,0 +1,205 @@
+{
+  "config": {
+    "clean_run_dir": "experiments/rttdp_brainuicl_runs/probe10_dataonly_pgd_nhe_eps05",
+    "attack_run_dir": "experiments/rttdp_brainuicl_runs/probe10_dataonly_pgd_nhe_eps05",
+    "attack_variant": "attack_pgd_nhe",
+    "seed": 4321,
+    "device": "cuda:0",
+    "final_step": 10
+  },
+  "clean_summary": {
+    "initial_acc": 0.591980638741104,
+    "before_acc": 0.5920039650272209,
+    "after_acc": 0.6151745638082847,
+    "initial_mf1": 0.5024796990779837,
+    "before_mf1": 0.5054106596830572,
+    "after_mf1": 0.5274961068516304
+  },
+  "attack_summary": {
+    "initial_acc": 0.591980638741104,
+    "before_acc": 0.5867060989398198,
+    "after_acc": 0.5624273071889351,
+    "initial_mf1": 0.5024796990779837,
+    "before_mf1": 0.4961313999090503,
+    "after_mf1": 0.4513170537908947
+  },
+  "clean_final": {
+    "acc": 0.6501796407185628,
+    "mf1": 0.6032201245242936,
+    "aaa": 0.7046271094175286,
+    "aaf1": 0.6828109327345376,
+    "fr": 0.07441820816639684
+  },
+  "attack_final": {
+    "acc": 0.6426347305389222,
+    "mf1": 0.5885896187274336,
+    "aaa": 0.6753021230266739,
+    "aaf1": 0.6412523037359895,
+    "fr": 0.08515898047907255
+  },
+  "final_delta_attack_minus_clean": {
+    "acc": -0.0075449101796406515,
+    "mf1": -0.014630505796859983,
+    "aaa": -0.02932498639085468,
+    "aaf1": -0.04155862899854812,
+    "fr": 0.010740772312675714
+  },
+  "clean_low_point": {
+    "min_acc": 0.6501796407185628,
+    "min_acc_step": 10,
+    "min_mf1": 0.6032201245242936,
+    "min_mf1_step": 10
+  },
+  "attack_low_point": {
+    "min_acc": 0.6426347305389222,
+    "min_acc_step": 10,
+    "min_mf1": 0.5885896187274336,
+    "min_mf1_step": 10
+  },
+  "clean_buffer": {
+    "final_length": 1271,
+    "total_added": 241,
+    "total_biased": 0,
+    "mean_added": 24.1
+  },
+  "attack_buffer": {
+    "final_length": 1033,
+    "total_added": 3,
+    "total_biased": 0,
+    "mean_added": 0.3
+  },
+  "attack_diagnostics": {},
+  "final_checkpoint_eval": {
+    "old_generalization": {
+      "subjects": [
+        6,
+        14,
+        32,
+        39,
+        43,
+        44,
+        51,
+        56,
+        59,
+        62,
+        67,
+        68,
+        72,
+        73,
+        75,
+        88,
+        90,
+        92,
+        100
+      ],
+      "clean": {
+        "acc": 0.6501796407185628,
+        "mf1": 0.6032201245242936,
+        "n_epochs": 16700
+      },
+      "attack": {
+        "acc": 0.6426347305389222,
+        "mf1": 0.5885896187274336,
+        "n_epochs": 16700
+      },
+      "delta_attack_minus_clean": {
+        "acc": -0.0075449101796406515,
+        "mf1": -0.014630505796859983
+      }
+    },
+    "new_order_all": {
+      "subjects": [
+        64,
+        89,
+        1,
+        27,
+        60,
+        5,
+        52,
+        42,
+        80,
+        26
+      ],
+      "clean": {
+        "acc": 0.5254504504504505,
+        "mf1": 0.48235042273018375,
+        "n_epochs": 8880
+      },
+      "attack": {
+        "acc": 0.5349099099099099,
+        "mf1": 0.48361792873100323,
+        "n_epochs": 8880
+      },
+      "delta_attack_minus_clean": {
+        "acc": 0.009459459459459474,
+        "mf1": 0.001267506000819485
+      }
+    },
+    "source_train": {
+      "subjects": [
+        7,
+        16,
+        18,
+        23,
+        24,
+        28,
+        30,
+        34,
+        35,
+        37,
+        38,
+        41,
+        45,
+        48,
+        50,
+        53,
+        69,
+        71,
+        74,
+        78,
+        79,
+        82,
+        93,
+        94
+      ],
+      "clean": {
+        "acc": 0.6644174757281553,
+        "mf1": 0.6357424870388682,
+        "n_epochs": 20600
+      },
+      "attack": {
+        "acc": 0.6687378640776699,
+        "mf1": 0.6392180419176874,
+        "n_epochs": 20600
+      },
+      "delta_attack_minus_clean": {
+        "acc": 0.004320388349514537,
+        "mf1": 0.0034755548788192314
+      }
+    },
+    "validation": {
+      "subjects": [
+        12,
+        21,
+        29,
+        58,
+        76,
+        77
+      ],
+      "clean": {
+        "acc": 0.6003802281368821,
+        "mf1": 0.5567006750364314,
+        "n_epochs": 5260
+      },
+      "attack": {
+        "acc": 0.6241444866920152,
+        "mf1": 0.5715225790009624,
+        "n_epochs": 5260
+      },
+      "delta_attack_minus_clean": {
+        "acc": 0.02376425855513309,
+        "mf1": 0.01482190396453098
+      }
+    }
+  }
+}
