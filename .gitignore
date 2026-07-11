@@ -1,3 +1,40 @@
 __pycache__/
 *.py[cod]
-model_parameter
+
+# Local datasets and download caches
+/data
+/dataset
+/datasets
+/downloads
+/raw
+/processed
+
+# Model weights and training state
+/model_parameter
+**/checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.pkl
+
+# EEG and archive data
+*.npy
+*.npz
+*.mat
+*.edf
+*.rec
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Generated experiment artifacts. Keep scripts and Markdown reports outside
+# these directories so they remain version controlled.
+/experiments/rttdp_brainuicl_runs/
+/experiments/distribution_trajectory/
+/experiments/stable_neuron_analysis/
+/experiments/code_checkpoints/
+**/pseudo_labels/
+**/poisoned_sequences/
+*.log

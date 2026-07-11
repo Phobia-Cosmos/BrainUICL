@@ -32,9 +32,16 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from model.pretrain_net import FeatureExtractor, SleepMLP, TransformerEncoder  # noqa: E402
+from model.spr_eeg import purify_eeg_sequences  # noqa: E402
 from utils.config import ModelConfig  # noqa: E402
 from utils.util import compute_aaf1, compute_aaa, compute_forget, fix_randomness  # noqa: E402
 from utils.util_block import MultiHeadAttentionBlock  # noqa: E402
+from puridiver_eeg import (  # noqa: E402
+    PuriDivEREEGFinetune,
+    build_purification_state,
+    make_puridiver_loader,
+    select_puridiver_memory,
+)
 
 
 class SequenceDataset(Dataset):
@@ -198,6 +205,15 @@ def feature_embeddings(blocks, eog, eeg, args):
     return features.reshape(batch, args.model_param.SeqLength, -1).mean(dim=1)
 
 
+def epoch_feature_embeddings(blocks, eog, eeg, args):
+    batch = eeg.shape[0]
+    eog = eog.reshape(-1, args.model_param.EogNum, args.model_param.EpochLength)
+    eeg = eeg.reshape(-1, args.model_param.EegNum, args.model_param.EpochLength)
+    features = blocks[0](eeg, eog)
+    features = blocks[1](features)
+    return features.reshape(batch, args.model_param.SeqLength, -1)
+
+
 def flat_logits(logits):
     return logits.permute(0, 2, 1).reshape(-1, logits.shape[1])
 
@@ -310,6 +326,19 @@ def make_new_loader(args, subject, is_buffer, shuffle, use_uploaded=True):
     else:
         dataset = SequenceDataset(new_paths)
     return DataLoader(dataset, batch_size=args.batch, shuffle=shuffle, num_workers=args.num_worker)
+
+
+def make_spr_replay_loader(args, max_items):
+    item_count = min(int(max_items), len(args.train_paths[0]))
+    if item_count <= 0:
+        return None
+    rng = np.random.default_rng(args.seed + len(args.train_paths[0]))
+    indices = rng.choice(len(args.train_paths[0]), size=item_count, replace=False)
+    paths = (
+        [args.train_paths[0][int(index)] for index in indices],
+        [args.train_paths[1][int(index)] for index in indices],
+    )
+    return DataLoader(SequenceDataset(paths), batch_size=args.batch, shuffle=True, num_workers=args.num_worker)
 
 
 class CPCProbe:
@@ -591,6 +620,17 @@ def bias_labels(labels, scores, rate, mode, class_num):
     else:
         raise ValueError(f"Unsupported score shape for second-best bias: {tuple(scores.shape)}")
     return torch.where(mask, replacement.long(), labels)
+
+
+def symmetric_label_noise(labels, rate, class_num, seed):
+    labels = np.asarray(labels, dtype=np.int64).copy()
+    if rate <= 0:
+        return labels, np.zeros_like(labels, dtype=bool)
+    rng = np.random.default_rng(seed)
+    mask = rng.random(labels.shape) < rate
+    offsets = rng.integers(1, class_num, size=labels.shape)
+    labels[mask] = (labels[mask] + offsets[mask]) % class_num
+    return labels, mask
 
 
 def raw_stats(eog, eeg):
@@ -1014,21 +1054,74 @@ def incremental_train(blocks, teacher_blocks, args, new_task_loader, new_task_id
         update_source_drift_direction(args, teacher_blocks, new_task_id, attack_state)
     elif args.attack_mode == "stealth_loss_drift":
         update_loss_drift_direction(args, teacher_blocks, attack_state)
+    # BrainUICL's teacher CPC is the SPR expert: it only sees the delayed
+    # current-individual data. The optional base CPC performs Self-Replay on
+    # current data plus an equally sized sample from the purified buffer.
     contrastive = CPCProbe(teacher_blocks, args)
+    base_contrastive = (
+        CPCProbe(blocks, args)
+        if args.defense_mode == "spr" and not args.spr_disable_self_replay
+        else None
+    )
+    replay_loader = None
+    if base_contrastive is not None and args.spr_self_replay_ratio > 0:
+        replay_items = math.ceil(len(new_task_loader.dataset) * args.spr_self_replay_ratio)
+        replay_loader = make_spr_replay_loader(args, replay_items)
     tmp_blocks_teacher = teacher_blocks
     for epoch in range(1, args.ssl_epoch + 1):
         set_train(teacher_blocks, True)
         losses = []
+        base_losses = []
         for eog, eeg, _label in new_task_loader:
             eog, eeg = eog.to(args.device), eeg.to(args.device)
             if is_input_attack(args.attack_mode):
                 eog, eeg = poison_new_batch(eog, eeg, teacher_blocks, args.attack_mode, attack_state, args)
             loss, tmp_blocks_teacher = contrastive.update(eeg, eog)
             losses.append(loss)
-        print(f"[{args.variant}] Individual {num} Subject {new_task_id} CPC Epoch {epoch} Loss {np.mean(losses):.6f}", flush=True)
+            if base_contrastive is not None:
+                base_loss, blocks = base_contrastive.update(eeg, eog)
+                base_losses.append(base_loss)
+        if replay_loader is not None:
+            for replay_eog, replay_eeg, _replay_label in replay_loader:
+                replay_eog = replay_eog.to(args.device)
+                replay_eeg = replay_eeg.to(args.device)
+                base_loss, blocks = base_contrastive.update(replay_eeg, replay_eog)
+                base_losses.append(base_loss)
+        base_text = f" BaseSelfReplay {np.mean(base_losses):.6f}" if base_losses else ""
+        print(
+            f"[{args.variant}] Individual {num} Subject {new_task_id} CPC Epoch {epoch} "
+            f"ExpertLoss {np.mean(losses):.6f}{base_text}",
+            flush=True,
+        )
 
-    algorithm = BufferPseudoLabelFinetuneProbe(blocks, tmp_blocks_teacher, args)
-    buffer_loader = make_new_loader(args, new_task_id, is_buffer=True, shuffle=True)
+    purification_summary = {}
+    if args.defense_mode == "puridiver":
+        new_paths = get_uploaded_subject_paths(args, new_task_id, use_uploaded=True)
+        purification_state = build_purification_state(
+            new_paths,
+            args.train_paths,
+            blocks,
+            tmp_blocks_teacher,
+            args,
+        )
+        args.puridiver_state = purification_state
+        purification_summary = dict(purification_state.summary)
+        algorithm = PuriDivEREEGFinetune(blocks, purification_state, args)
+        buffer_loader = make_puridiver_loader(args, new_paths, shuffle=True)
+        print(
+            f"[{args.variant}] Individual {num} purification "
+            f"new clean/relabel/unlabeled="
+            f"{purification_summary['new_clean_rate']:.3f}/"
+            f"{purification_summary['new_relabel_rate']:.3f}/"
+            f"{purification_summary['new_unlabeled_rate']:.3f} replay="
+            f"{purification_summary['replay_clean_rate']:.3f}/"
+            f"{purification_summary['replay_relabel_rate']:.3f}/"
+            f"{purification_summary['replay_unlabeled_rate']:.3f}",
+            flush=True,
+        )
+    else:
+        algorithm = BufferPseudoLabelFinetuneProbe(blocks, tmp_blocks_teacher, args)
+        buffer_loader = make_new_loader(args, new_task_id, is_buffer=True, shuffle=True)
     optimizer_cea = torch.optim.Adam(
         [{"params": list(blocks[0].parameters())}, {"params": list(blocks[1].parameters())}],
         lr=args.cl_lr,
@@ -1058,7 +1151,11 @@ def incremental_train(blocks, teacher_blocks, args, new_task_loader, new_task_id
         losses = []
         if epoch % args.cross_epoch == 0:
             align_feature.append([])
-        for batch_idx, (eog, eeg, label) in enumerate(buffer_loader):
+        for batch_idx, batch_data in enumerate(buffer_loader):
+            if args.defense_mode == "puridiver":
+                eog, eeg, label, new_indices, replay_indices = batch_data
+            else:
+                eog, eeg, label = batch_data
             eog, eeg, label = eog.to(args.device), eeg.to(args.device), label.to(args.device)
             if is_input_attack(args.attack_mode) and not use_individual_proxy_upload(args):
                 seq_len = args.model_param.SeqLength
@@ -1079,7 +1176,16 @@ def incremental_train(blocks, teacher_blocks, args, new_task_loader, new_task_id
                     eog_adv, eeg_adv = poison_new_batch(eog_new, eeg_new, tmp_blocks_teacher, args.attack_mode, attack_state, args)
                 eog = torch.cat((eog_adv, eog[:, seq_len:, :, :]), dim=1)
                 eeg = torch.cat((eeg_adv, eeg[:, seq_len:, :, :]), dim=1)
-            loss, tmp_blocks, feature_before = algorithm.update(eeg, eog, label)
+            if args.defense_mode == "puridiver":
+                loss, tmp_blocks, feature_before = algorithm.update(
+                    eeg,
+                    eog,
+                    label,
+                    new_indices,
+                    replay_indices,
+                )
+            else:
+                loss, tmp_blocks, feature_before = algorithm.update(eeg, eog, label)
             if args.attack_mode.startswith("model_"):
                 seq_len = args.model_param.SeqLength
                 loss_attack = model_attack_step(tmp_blocks, eog[:, :seq_len, :, :], eeg[:, :seq_len, :, :], attack_state, args)
@@ -1127,10 +1233,129 @@ def incremental_train(blocks, teacher_blocks, args, new_task_loader, new_task_id
                 optimizer_cea.step()
             losses.append(loss)
         print(f"[{args.variant}] Individual {num} Subject {new_task_id} Joint Epoch {epoch+1} Loss {np.mean(losses):.6f}", flush=True)
-    return tmp_blocks, tmp_blocks_teacher
+    if args.defense_mode == "puridiver":
+        purification_summary.update(algorithm.last_diagnostics)
+    return tmp_blocks, tmp_blocks_teacher, purification_summary
 
 
-def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state):
+def spr_buffer_single_merge(args, new_task_id, num, tmp_blocks, expert_blocks, attack_state):
+    new_paths = get_uploaded_subject_paths(args, new_task_id, use_uploaded=True)
+    new_loader = DataLoader(SequenceDataset(new_paths), batch_size=args.batch, shuffle=False, num_workers=args.num_worker)
+    save_path = args.variant_dir / "pseudo_labels" / f"individual_{num}" / "label"
+    save_data_path = args.variant_dir / "poisoned_sequences" / f"individual_{num}" / "data"
+    save_path.mkdir(parents=True, exist_ok=True)
+    store_poisoned = args.store_poisoned_buffer and is_input_attack(args.attack_mode) and not use_individual_proxy_upload(args)
+    if store_poisoned:
+        save_data_path.mkdir(parents=True, exist_ok=True)
+
+    probability_rows, feature_rows, true_rows, poisoned_rows = [], [], [], []
+    set_train(tmp_blocks, False)
+    set_train(expert_blocks, False)
+    for eog, eeg, labels in new_loader:
+        eog = eog.to(args.device)
+        eeg = eeg.to(args.device)
+        if store_poisoned:
+            eog_eval, eeg_eval = poison_new_batch(eog, eeg, tmp_blocks, args.attack_mode, attack_state, args)
+        else:
+            eog_eval, eeg_eval = eog, eeg
+        set_train(tmp_blocks, False)
+        set_train(expert_blocks, False)
+        with torch.no_grad():
+            logits = forward_blocks(tmp_blocks, eog_eval, eeg_eval, args)
+            probability_rows.append(torch.softmax(logits, dim=1).cpu().numpy())
+            feature_rows.append(epoch_feature_embeddings(expert_blocks, eog_eval, eeg_eval, args).cpu().numpy())
+        true_rows.append(labels.numpy())
+        if store_poisoned:
+            poisoned_rows.extend(
+                torch.cat((eog_eval, eeg_eval), dim=2).detach().cpu().numpy().astype(np.float32)
+            )
+
+    probabilities = np.concatenate(probability_rows, axis=0)
+    features = np.concatenate(feature_rows, axis=0)
+    true_labels = np.concatenate(true_rows, axis=0)
+    confidences = probabilities.max(axis=1)
+    pseudo_labels = probabilities.argmax(axis=1)
+    noisy_epoch_mask = np.zeros_like(pseudo_labels, dtype=bool)
+    if args.attack_mode == "buffer_label_noise":
+        for sequence_index in range(pseudo_labels.shape[0]):
+            pseudo_labels[sequence_index], noisy_epoch_mask[sequence_index] = symmetric_label_noise(
+                pseudo_labels[sequence_index],
+                args.buffer_label_noise_rate,
+                args.model_param.NumClasses,
+                args.seed + 1000 * num + sequence_index,
+            )
+    purification = purify_eeg_sequences(
+        features,
+        pseudo_labels,
+        confidences,
+        confidence_threshold=args.confidence,
+        min_confident_epochs=args.confident_epoch_n,
+        clean_threshold=args.spr_clean_threshold,
+        min_clean_epochs=args.spr_min_clean_epochs,
+        sequence_threshold=args.spr_sequence_threshold,
+        ensembles=args.spr_ensembles,
+        bmm_iters=args.spr_bmm_iters,
+        seed=args.seed + num,
+    )
+
+    candidate_count = int(purification.candidate.sum())
+    accepted_mask = purification.accepted.copy()
+    minimum_accepted = math.ceil(candidate_count * args.spr_min_accept_ratio)
+    if int(accepted_mask.sum()) < minimum_accepted:
+        candidate_indices = np.flatnonzero(purification.candidate)
+        ranked = candidate_indices[np.argsort(purification.sequence_scores[candidate_indices])[::-1]]
+        accepted_mask[ranked[:minimum_accepted]] = True
+    accepted_indices = np.flatnonzero(accepted_mask)
+    candidate_error = (
+        float(np.mean(pseudo_labels[purification.candidate] != true_labels[purification.candidate]))
+        if candidate_count
+        else None
+    )
+    accepted_error = (
+        float(np.mean(pseudo_labels[accepted_mask] != true_labels[accepted_mask]))
+        if accepted_indices.size
+        else None
+    )
+
+    added = 0
+    biased = int(np.any(noisy_epoch_mask[accepted_indices], axis=1).sum())
+    for idx in accepted_indices:
+        label_to_save = pseudo_labels[idx].copy()
+        if args.attack_mode.startswith("stealth_") and args.stealth_buffer_bias_rate > 0:
+            if np.random.random() < args.stealth_buffer_bias_rate:
+                if args.stealth_buffer_bias_mode == "next":
+                    label_to_save = (label_to_save + 1) % args.model_param.NumClasses
+                else:
+                    label_to_save = np.argsort(probabilities[idx], axis=0)[-2, :].reshape(-1)
+                biased += 1
+        save_label_path = save_path / f"{idx}.npy"
+        np.save(save_label_path, label_to_save)
+        if store_poisoned:
+            save_data_file = save_data_path / f"{idx}.npy"
+            np.save(save_data_file, poisoned_rows[idx])
+            args.train_paths[0].append(save_data_file)
+        else:
+            args.train_paths[0].append(new_paths[0][idx])
+        args.train_paths[1].append(save_label_path)
+        added += 1
+
+    diagnostics = {
+        "candidate_sequences": candidate_count,
+        "accepted_sequences": added,
+        "rejected_sequences": candidate_count - added,
+        "acceptance_rate": float(added / candidate_count) if candidate_count else 0.0,
+        "pseudo_label_error_before": candidate_error,
+        "pseudo_label_error_after": accepted_error,
+        "mean_sequence_clean_score": (
+            float(purification.sequence_scores[purification.candidate].mean()) if candidate_count else None
+        ),
+    }
+    return added, biased, diagnostics
+
+
+def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state, expert_blocks=None):
+    if args.defense_mode == "spr":
+        return spr_buffer_single_merge(args, new_task_id, num, tmp_blocks, expert_blocks, attack_state)
     new_paths = get_uploaded_subject_paths(args, new_task_id, use_uploaded=True)
     new_loader = DataLoader(SequenceDataset(new_paths), batch_size=args.batch, shuffle=False, num_workers=args.num_worker)
     save_path = args.variant_dir / "pseudo_labels" / f"individual_{num}" / "label"
@@ -1140,6 +1365,12 @@ def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state):
         save_data_path.mkdir(parents=True, exist_ok=True)
     added = 0
     biased = 0
+    candidate_count = 0
+    candidate_error_count = 0
+    candidate_epoch_count = 0
+    purifier_rejected = 0
+    pseudo_error_count = 0
+    pseudo_epoch_count = 0
     global_idx = 0
     set_train(tmp_blocks, False)
     for eog, eeg, _labels in new_loader:
@@ -1158,8 +1389,31 @@ def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state):
             idx = global_idx + row
             confident_epoch_num = np.sum(pred_prob[row, :] >= args.confidence)
             if confident_epoch_num >= args.confident_epoch_n:
+                candidate_count += 1
+                true_label = _labels[row].numpy().reshape(-1)
+                raw_pseudo_label = np.squeeze(pred_label[row, :].reshape(-1, 1))
+                candidate_error_count += int(np.sum(raw_pseudo_label.reshape(-1) != true_label))
+                candidate_epoch_count += int(true_label.size)
+                if args.defense_mode == "puridiver":
+                    clean_epochs = int(
+                        np.sum(
+                            args.puridiver_state.new_clean[idx].numpy()
+                            >= args.puridiver_clean_threshold
+                        )
+                    )
+                    if clean_epochs < args.puridiver_min_clean_epochs:
+                        purifier_rejected += 1
+                        continue
                 save_label_path = save_path / f"{idx}.npy"
-                label_to_save = np.squeeze(pred_label[row, :].reshape(-1, 1))
+                label_to_save = raw_pseudo_label
+                if args.attack_mode == "buffer_label_noise":
+                    label_to_save, noisy_mask = symmetric_label_noise(
+                        label_to_save,
+                        args.buffer_label_noise_rate,
+                        args.model_param.NumClasses,
+                        args.seed + 1000 * num + idx,
+                    )
+                    biased += int(np.any(noisy_mask))
                 if args.attack_mode.startswith("stealth_") and args.stealth_buffer_bias_rate > 0:
                     if np.random.random() < args.stealth_buffer_bias_rate:
                         if args.stealth_buffer_bias_mode == "next":
@@ -1176,9 +1430,24 @@ def buffer_single_merge(args, new_task_id, num, tmp_blocks, attack_state):
                 else:
                     args.train_paths[0].append(new_paths[0][idx])
                 args.train_paths[1].append(save_label_path)
+                pseudo_error_count += int(np.sum(label_to_save.reshape(-1) != true_label))
+                pseudo_epoch_count += int(true_label.size)
                 added += 1
         global_idx += pred_prob.shape[0]
-    return added, biased
+    diagnostics = {
+        "candidate_sequences": candidate_count,
+        "accepted_sequences": added,
+        "rejected_sequences": candidate_count - added,
+        "purifier_rejected_sequences": purifier_rejected,
+        "acceptance_rate": float(added / candidate_count) if candidate_count else 0.0,
+        "pseudo_label_error_before": (
+            float(candidate_error_count / candidate_epoch_count) if candidate_epoch_count else None
+        ),
+        "pseudo_label_error_after": (
+            float(pseudo_error_count / pseudo_epoch_count) if pseudo_epoch_count else None
+        ),
+    }
+    return added, biased, diagnostics
 
 
 def summarize_plasticity(performance):
@@ -1209,10 +1478,14 @@ def write_progress(args, performance, summary=None):
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
 
 
-def run_variant(base_args, variant, attack_mode, new_order):
+def run_variant(base_args, variant, attack_mode, new_order, defense_mode="none"):
+    # Reset every variant so clean, attacked, and defended runs use identical
+    # loader sampling and stochastic attack initialization.
+    fix_randomness(base_args.seed)
     args = copy.copy(base_args)
     args.variant = variant
     args.attack_mode = attack_mode
+    args.defense_mode = defense_mode
     args.variant_dir = args.output_root / variant
     args.variant_dir.mkdir(parents=True, exist_ok=True)
     args.train_paths = [list(args.base_train_paths[0]), list(args.base_train_paths[1])]
@@ -1228,9 +1501,11 @@ def run_variant(base_args, variant, attack_mode, new_order):
         "plasticity": {str(int(subject)): {"ACC": [], "MF1": []} for subject in new_order},
         "buffer": [],
         "attack_diagnostics": [],
+        "purification": [],
         "uploaded_subjects": [],
         "order": [int(subject) for subject in new_order],
         "attack_mode": attack_mode,
+        "defense_mode": defense_mode,
     }
     attack_state = AttackState(args.model_param.NumClasses, args.device)
 
@@ -1261,7 +1536,12 @@ def run_variant(base_args, variant, attack_mode, new_order):
             args.uploaded_subject_paths[int(subject)] = upload_paths
             performance["uploaded_subjects"].append(upload_stats)
         new_loader = make_new_loader(args, subject, is_buffer=False, shuffle=True, use_uploaded=True)
-        blocks, teacher_blocks = incremental_train(blocks, teacher_blocks, args, new_loader, subject, num, attack_state)
+        blocks, teacher_blocks, purification = incremental_train(
+            blocks, teacher_blocks, args, new_loader, subject, num, attack_state
+        )
+        if purification:
+            purification.update({"step": num, "subject": int(subject)})
+            performance["purification"].append(purification)
         if not args.no_save_checkpoints:
             save_blocks(blocks, args.variant_dir / "checkpoints" / f"individual_{num}", args.seed)
 
@@ -1278,8 +1558,16 @@ def run_variant(base_args, variant, attack_mode, new_order):
         performance["stability"]["AAA"].append(float(compute_aaa(performance["stability"]["ACC"])))
         performance["stability"]["AAF1"] = compute_aaf1(performance["stability"]["MF1"])
         performance["stability"]["FR"].append(float(compute_forget(performance["stability"]["ACC"])))
-        added, biased = buffer_single_merge(args, subject, num, blocks, attack_state)
+        added, biased, buffer_diagnostics = buffer_single_merge(
+            args, subject, num, blocks, attack_state, expert_blocks=teacher_blocks
+        )
+        memory_stats = None
+        if defense_mode == "puridiver":
+            memory_stats = select_puridiver_memory(args, blocks)
         buffer_row = {"step": num, "subject": int(subject), "added": int(added), "length": len(args.train_paths[0])}
+        buffer_row.update(buffer_diagnostics)
+        if memory_stats is not None:
+            buffer_row["memory_selection"] = memory_stats
         if biased:
             buffer_row["biased"] = int(biased)
         performance["buffer"].append(buffer_row)
@@ -1390,11 +1678,19 @@ def parse_args():
             "stealth_loss_drift",
             "stealth_target_flip",
             "proxy_meta_conflict",
+            "buffer_label_noise",
         ],
         default="model_nhe",
     )
     parser.add_argument("--run-clean-only", action="store_true")
     parser.add_argument("--run-attack-only", action="store_true")
+    parser.add_argument("--run-defense-only", action="store_true")
+    parser.add_argument("--defense-mode", choices=["none", "puridiver", "spr"], default="none")
+    parser.add_argument(
+        "--defense-on-clean",
+        action="store_true",
+        help="Run the selected defense on a clean stream instead of the configured attack.",
+    )
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--ssl-lr", type=float, default=1e-6)
     parser.add_argument("--cl-lr", type=float, default=1e-7)
@@ -1405,6 +1701,25 @@ def parse_args():
     parser.add_argument("--weight-decay", type=float, default=3e-4)
     parser.add_argument("--confidence", type=float, default=0.9)
     parser.add_argument("--confident-epoch-n", type=int, default=15)
+    parser.add_argument("--buffer-label-noise-rate", type=float, default=0.2)
+    parser.add_argument("--spr-self-replay-ratio", type=float, default=1.0)
+    parser.add_argument("--spr-disable-self-replay", action="store_true")
+    parser.add_argument("--spr-ensembles", type=int, default=5)
+    parser.add_argument("--spr-bmm-iters", type=int, default=10)
+    parser.add_argument("--spr-clean-threshold", type=float, default=0.5)
+    parser.add_argument("--spr-min-clean-epochs", type=int, default=12)
+    parser.add_argument("--spr-sequence-threshold", type=float, default=0.5)
+    parser.add_argument("--spr-min-accept-ratio", type=float, default=0.7)
+    parser.add_argument("--puridiver-clean-threshold", type=float, default=0.5)
+    parser.add_argument("--puridiver-uncertainty-threshold", type=float, default=0.5)
+    parser.add_argument("--puridiver-relabel-weight", type=float, default=1.0)
+    parser.add_argument("--puridiver-consistency-weight", type=float, default=1.0)
+    parser.add_argument("--puridiver-soft-temperature", type=float, default=0.5)
+    parser.add_argument("--puridiver-weak-noise", type=float, default=0.002)
+    parser.add_argument("--puridiver-strong-noise", type=float, default=0.01)
+    parser.add_argument("--puridiver-memory-size", type=int, default=1600)
+    parser.add_argument("--puridiver-purity-weight", type=float, default=0.5)
+    parser.add_argument("--puridiver-min-clean-epochs", type=int, default=10)
     parser.add_argument("--pgd-steps", type=int, default=3)
     parser.add_argument("--pgd-eps-scale", type=float, default=0.10)
     parser.add_argument("--pgd-random-start", action="store_true")
@@ -1454,6 +1769,11 @@ def parse_args():
 
 def main():
     args = parse_args()
+    exclusive_runs = sum([args.run_clean_only, args.run_attack_only, args.run_defense_only])
+    if exclusive_runs > 1:
+        raise ValueError("Choose at most one of --run-clean-only, --run-attack-only, --run-defense-only")
+    if args.run_defense_only and args.defense_mode == "none":
+        raise ValueError("--run-defense-only requires --defense-mode puridiver or spr")
     fix_randomness(args.seed)
     args.device = torch.device(f"cuda:{args.gpu}" if args.gpu >= 0 and torch.cuda.is_available() else "cpu")
     args.dataset = "ISRUC"
@@ -1481,16 +1801,41 @@ def main():
     (args.output_root / "split.json").write_text(json.dumps(split_payload, indent=2, ensure_ascii=False))
     print(json.dumps({"device": str(args.device), **split_payload}, indent=2), flush=True)
 
-    clean_perf = attack_perf = None
-    clean_summary = attack_summary = None
-    if not args.run_attack_only:
-        clean_perf, clean_summary = run_variant(args, "clean", "none", new_order)
-    if not args.run_clean_only:
-        attack_perf, attack_summary = run_variant(args, f"attack_{args.attack_mode}", args.attack_mode, new_order)
+    clean_perf = attack_perf = defense_perf = None
+    clean_summary = attack_summary = defense_summary = None
+    if not args.run_attack_only and not args.run_defense_only:
+        clean_perf, clean_summary = run_variant(args, "clean", "none", new_order, defense_mode="none")
+    if not args.run_clean_only and not args.run_defense_only:
+        attack_perf, attack_summary = run_variant(
+            args, f"attack_{args.attack_mode}", args.attack_mode, new_order, defense_mode="none"
+        )
+    if args.defense_mode != "none" and not args.run_clean_only and not args.run_attack_only:
+        defense_attack_mode = "none" if args.defense_on_clean else args.attack_mode
+        defense_suffix = "clean" if args.defense_on_clean else args.attack_mode
+        defense_perf, defense_summary = run_variant(
+            args,
+            f"defense_{args.defense_mode}_{defense_suffix}",
+            defense_attack_mode,
+            new_order,
+            defense_mode=args.defense_mode,
+        )
     if clean_perf is not None and attack_perf is not None:
         report = write_comparison(args.output_root, clean_perf, attack_perf, clean_summary, attack_summary, args)
         print(json.dumps(report["clean_final"], indent=2), flush=True)
         print(json.dumps(report["attack_final"], indent=2), flush=True)
+    if defense_perf is not None:
+        defense_final = {
+            "acc": defense_perf["stability"]["ACC"][-1],
+            "mf1": defense_perf["stability"]["MF1"][-1],
+            "aaa": defense_perf["stability"]["AAA"][-1],
+            "aaf1": defense_perf["stability"]["AAF1"][-1],
+            "fr": defense_perf["stability"]["FR"][-1],
+            "plasticity": defense_summary,
+        }
+        (args.output_root / "defense_summary.json").write_text(
+            json.dumps(defense_final, indent=2, ensure_ascii=False)
+        )
+        print(json.dumps(defense_final, indent=2), flush=True)
 
 
 if __name__ == "__main__":
