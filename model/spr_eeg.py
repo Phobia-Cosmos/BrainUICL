@@ -11,6 +11,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 from scipy import stats
 
 
@@ -122,6 +125,163 @@ def _class_clean_probabilities(
             posterior = centrality
         ensemble_posteriors.append(posterior)
     return np.mean(np.stack(ensemble_posteriors), axis=0)
+
+
+def self_centered_clean_probabilities(
+    features: np.ndarray,
+    observed_labels: np.ndarray,
+    *,
+    ensembles: int = 5,
+    bmm_iters: int = 10,
+    seed: int = 0,
+) -> np.ndarray:
+    """Estimate SPR clean posteriors without a classifier-confidence gate."""
+
+    features = np.asarray(features, dtype=np.float32)
+    observed_labels = np.asarray(observed_labels, dtype=np.int64).reshape(-1)
+    if features.ndim != 2 or features.shape[0] != observed_labels.shape[0]:
+        raise ValueError("expected features [N,D] and observed_labels [N]")
+    clean = np.zeros(features.shape[0], dtype=np.float64)
+    rng = np.random.default_rng(seed)
+    for class_id in np.unique(observed_labels):
+        indices = np.flatnonzero(observed_labels == class_id)
+        clean[indices] = _class_clean_probabilities(
+            features[indices], ensembles=ensembles, bmm_iters=bmm_iters, rng=rng
+        )
+    return clean
+
+
+def symmetric_label_noise(
+    labels: np.ndarray,
+    rate: float,
+    num_classes: int,
+    *,
+    seed: int,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Replace selected labels uniformly with a guaranteed different class."""
+
+    if not 0.0 <= rate <= 1.0:
+        raise ValueError("noise rate must be in [0, 1]")
+    if num_classes < 2:
+        raise ValueError("num_classes must be at least two")
+    labels = np.asarray(labels, dtype=np.int64)
+    if np.any((labels < 0) | (labels >= num_classes)):
+        raise ValueError("labels contain an invalid class")
+    rng = np.random.default_rng(seed)
+    noisy = labels.copy()
+    mask = rng.random(labels.shape) < rate
+    offsets = rng.integers(1, num_classes, size=labels.shape)
+    noisy[mask] = (labels[mask] + offsets[mask]) % num_classes
+    return noisy, mask
+
+
+class NTXentLoss(nn.Module):
+    """SimCLR NT-Xent loss for two aligned batches of projected embeddings."""
+
+    def __init__(self, temperature: float = 0.5):
+        super().__init__()
+        if temperature <= 0:
+            raise ValueError("temperature must be positive")
+        self.temperature = temperature
+
+    def forward(self, first: torch.Tensor, second: torch.Tensor) -> torch.Tensor:
+        if first.ndim != 2 or first.shape != second.shape:
+            raise ValueError("expected two embedding tensors with shape [B,D]")
+        if first.shape[0] < 2:
+            raise ValueError("NT-Xent requires at least two paired samples")
+        batch = first.shape[0]
+        embeddings = F.normalize(torch.cat((first, second), dim=0), dim=1)
+        logits = embeddings @ embeddings.T / self.temperature
+        diagonal = torch.eye(2 * batch, dtype=torch.bool, device=logits.device)
+        logits = logits.masked_fill(diagonal, torch.finfo(logits.dtype).min)
+        targets = (torch.arange(2 * batch, device=logits.device) + batch) % (2 * batch)
+        return F.cross_entropy(logits, targets)
+
+
+@dataclass(frozen=True)
+class EpochMemoryRecord:
+    data_path: str
+    epoch_index: int
+    observed_label: int
+    clean_probability: float
+    true_label: int = -1
+
+
+class PurifiedEpochBuffer:
+    """Fixed EEG memory with a protected source partition and SPR dynamic partition."""
+
+    def __init__(self, capacity: int, source_capacity: int, num_classes: int):
+        if capacity <= 0 or not 0 <= source_capacity <= capacity:
+            raise ValueError("invalid memory capacity")
+        self.capacity = int(capacity)
+        self.source_capacity = int(source_capacity)
+        self.dynamic_capacity = self.capacity - self.source_capacity
+        self.num_classes = int(num_classes)
+        self.source: list[EpochMemoryRecord] = []
+        self.dynamic: list[EpochMemoryRecord] = []
+        self.stream_counts = np.zeros(self.num_classes, dtype=np.int64)
+
+    def __len__(self) -> int:
+        return len(self.source) + len(self.dynamic)
+
+    @property
+    def records(self) -> list[EpochMemoryRecord]:
+        return self.source + self.dynamic
+
+    def seed_source(self, records: list[EpochMemoryRecord], *, seed: int) -> None:
+        """Seed a sequence-aware fixed source partition once."""
+
+        if self.source:
+            raise RuntimeError("source memory has already been seeded")
+        rng = np.random.default_rng(seed)
+        grouped: dict[str, list[EpochMemoryRecord]] = {}
+        for record in records:
+            grouped.setdefault(record.data_path, []).append(record)
+        paths = list(grouped)
+        rng.shuffle(paths)
+        selected: list[EpochMemoryRecord] = []
+        for path in paths:
+            candidates = grouped[path]
+            remaining = self.source_capacity - len(selected)
+            if remaining <= 0:
+                break
+            if len(candidates) <= remaining:
+                selected.extend(candidates)
+            else:
+                indices = rng.choice(len(candidates), size=remaining, replace=False)
+                selected.extend(candidates[int(index)] for index in indices)
+        self.source = selected[: self.source_capacity]
+
+    def update(self, records: list[EpochMemoryRecord]) -> None:
+        """Apply class-aware purified reservoir replacement to accepted epochs."""
+
+        if self.dynamic_capacity == 0:
+            return
+        for record in records:
+            label = int(record.observed_label)
+            if not 0 <= label < self.num_classes:
+                raise ValueError("record contains an invalid class")
+            self.stream_counts[label] += 1
+            self.dynamic.append(record)
+            if len(self.dynamic) <= self.dynamic_capacity:
+                continue
+            class_sizes = np.bincount(
+                [item.observed_label for item in self.dynamic], minlength=self.num_classes
+            ).astype(np.float64)
+            total_seen = max(int(self.stream_counts.sum()), 1)
+            target = self.dynamic_capacity * self.stream_counts / total_seen
+            evict_class = int(np.argmax(class_sizes - target))
+            candidates = [
+                index for index, item in enumerate(self.dynamic)
+                if item.observed_label == evict_class
+            ]
+            evict_index = min(candidates, key=lambda index: self.dynamic[index].clean_probability)
+            self.dynamic.pop(evict_index)
+
+    def class_counts(self) -> list[int]:
+        return np.bincount(
+            [record.observed_label for record in self.records], minlength=self.num_classes
+        ).astype(int).tolist()
 
 
 def purify_eeg_sequences(
